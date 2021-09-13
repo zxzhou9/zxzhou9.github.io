@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>LBSN专题</title>
+    <url>/2021/07/25/LBSN/</url>
+    <content><![CDATA[<h1 id="1-用户位置预测、兴趣点（POI-推荐"><a href="#1-用户位置预测、兴趣点（POI-推荐" class="headerlink" title="1. 用户位置预测、兴趣点（POI)推荐"></a>1. 用户位置预测、兴趣点（POI)推荐</h1><ul>
+<li>智能城市</li>
+<li>论文<br><img src="/images/LBSN/1.png" alt="1"></li>
+<li>马尔科夫模型+多维特征融合</li>
+<li>多维特征融合</li>
+<li>多维特征融合+分类/回归</li>
+<li>特征融合+矩阵分解</li>
+<li>主题建模</li>
+<li>图嵌入学习(<em>Graph Embedding</em>)</li>
+<li>循环神经网络+注意力</li>
+<li>循环神经网络+周期注意力</li>
+<li>循环神经网络+上下文注意力(<em>DeepMove</em>)</li>
+<li>图神经网络+注意力</li>
+</ul>
+<h1 id="2-拓展思路"><a href="#2-拓展思路" class="headerlink" title="2. 拓展思路"></a>2. 拓展思路</h1><ul>
+<li>注意力机制应用更普遍、复杂</li>
+<li>多模态数据的综合利用匮乏，尤其是对带有情感状态的文本内容挖掘不足</li>
+<li>建模用户在特定时间窗口内的访问偏好有待深入</li>
+</ul>
+<h1 id="3-LBSN中用户位置隐私的保护"><a href="#3-LBSN中用户位置隐私的保护" class="headerlink" title="3. LBSN中用户位置隐私的保护"></a>3. LBSN中用户位置隐私的保护</h1><ul>
+<li>在线保护：Cloak,Dummy,Obfuscation(Pseudo-location)</li>
+<li>Cloak-K匿名<br><img src="/images/LBSN/2.png" alt="2"></li>
+<li>dummy-K匿名</li>
+<li>obfuscation-差分隐私(地理不可分辨性)指的是地理上相近的位置经过保护机制的模糊会产生相近的模糊位置</li>
+<li>Game-based obfuscation 动态防守-攻击博弈下的模糊方法</li>
+<li>基于混合隐私度量的obfuscation<br><img src="/images/LBSN/3.png" alt="3"></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>强化学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Attention</title>
+    <url>/2021/07/25/attention/</url>
+    <content><![CDATA[<h1 id="Seq2Seq模型"><a href="#Seq2Seq模型" class="headerlink" title="Seq2Seq模型"></a>Seq2Seq模型</h1><ul>
+<li><p>输入某个序列到模型，转换为另一个序列<br><img src="/images/attention/1.png" alt="1"></p>
+</li>
+<li><p>编码器<br><img src="/images/attention/2.png" alt="2"></p>
+</li>
+<li><p>解码器<br><img src="/images/attention/3.png" alt="3"></p>
+</li>
+<li><p>时间序列展开</p>
+</li>
+</ul>
+<p><img src="/images/attention/4.png" alt="4"></p>
+<ul>
+<li>EOC 初始输入</li>
+</ul>
+<h1 id="Attention机制"><a href="#Attention机制" class="headerlink" title="Attention机制"></a>Attention机制</h1><p><img src="/images/attention/5.png" alt="5"></p>
+<p><img src="/images/attention/6.png" alt="6"></p>
+<p><img src="/images/attention/7.png" alt="7"></p>
+<p><img src="/images/attention/8.png" alt="8"></p>
+]]></content>
+      <tags>
+        <tag>强化学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>人格检测_用户画像</title>
+    <url>/2021/07/25/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/</url>
+    <content><![CDATA[<h1 id="用户画像"><a href="#用户画像" class="headerlink" title="用户画像"></a>用户画像</h1><ul>
+<li>芝麻信用分的评估</li>
+<li>用户信息标签化，商业分析</li>
+<li>用户属性的标签化框架</li>
+<li><em>Patch Dictionary</em></li>
+<li><em>Meta Learning</em><br><img src="/images/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/1.png" alt="1"></li>
+</ul>
+<h1 id="人格检测"><a href="#人格检测" class="headerlink" title="人格检测"></a>人格检测</h1><h2 id="1-基于数据驱动的研究"><a href="#1-基于数据驱动的研究" class="headerlink" title="1. 基于数据驱动的研究"></a>1. 基于数据驱动的研究</h2><p><img src="/images/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/2.png" alt="2"></p>
+<ul>
+<li>用户人格识别中，样本量小和分布失衡的问题研究(<em>Tomek Link</em>方法)</li>
+</ul>
+<h2 id="2-基于应用驱动的模型"><a href="#2-基于应用驱动的模型" class="headerlink" title="2. 基于应用驱动的模型"></a>2. 基于应用驱动的模型</h2><p><img src="/images/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/3.png" alt="3"></p>
+<p><img src="/images/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/4.png" alt="4"></p>
+]]></content>
+      <tags>
+        <tag>CPSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>群体画像</title>
+    <url>/2021/07/25/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/</url>
+    <content><![CDATA[<h1 id="人群画像"><a href="#人群画像" class="headerlink" title="人群画像"></a>人群画像</h1><ul>
+<li><p>群体<img src="/images/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/1.png" alt="1"></p>
+</li>
+<li><p>社会群体和社会计算之间关联</p>
+<img src="/images/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/2.png" alt="2" style="zoom:75%;"></li>
+<li><p>群体发现(划分算法)</p>
+<h2 id="1-Community-detection"><a href="#1-Community-detection" class="headerlink" title="1.Community detection"></a>1.Community detection</h2><h2 id="2-Social-circles"><a href="#2-Social-circles" class="headerlink" title="2.Social circles"></a>2.Social circles</h2><h2 id="3-共谋群体-聚类"><a href="#3-共谋群体-聚类" class="headerlink" title="3.共谋群体(聚类)"></a>3.共谋群体(聚类)</h2></li>
+</ul>
+<p><img src="/images/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/3.png" alt="3"></p>
+<ul>
+<li>公式表示线性回归模型</li>
+</ul>
+<h1 id="群体画像"><a href="#群体画像" class="headerlink" title="群体画像"></a>群体画像</h1><ul>
+<li>群体画像各个维度和用户画像对应</li>
+<li><em>plurality voting</em></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CPSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>标题党检测</title>
+    <url>/2021/07/25/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/</url>
+    <content><![CDATA[<h1 id="标题党"><a href="#标题党" class="headerlink" title="标题党"></a>标题党</h1><ul>
+<li><p>静态属性</p>
+<ul>
+<li>标题语言特征</li>
+<li>标题-正文匹配</li>
+</ul>
+</li>
+<li><p>动态属性</p>
+<ul>
+<li>用户行为分析</li>
+</ul>
+</li>
+<li><p>基于标题文本特征的方法<br><img src="/images/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/1.png" alt="1"></p>
+</li>
+<li><p>基于标题和正文匹配程度的方法<br><img src="/images/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/2.png" alt="2"></p>
+</li>
+<li><p>基于社交网站用户行为的方法<br><img src="/images/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/3.png" alt="3"></p>
+</li>
+<li><p>总结<br><img src="/images/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/4.png" alt="4"></p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CPSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>视频取证</title>
+    <url>/2021/07/25/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/</url>
+    <content><![CDATA[<h1 id="图像取证"><a href="#图像取证" class="headerlink" title="图像取证"></a>图像取证</h1><ul>
+<li>二分类任务：是否经过修改</li>
+<li>多分类任务：在上一个任务的基础上区分用何种方式进行伪造，相机识别</li>
+</ul>
+<h1 id="研究现状"><a href="#研究现状" class="headerlink" title="研究现状"></a>研究现状</h1><ul>
+<li>光响应非均匀性<br><img src="/images/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/1.png" alt="1"></li>
+<li>隐写分析模型</li>
+</ul>
+<h1 id="视频造假与识别"><a href="#视频造假与识别" class="headerlink" title="视频造假与识别"></a>视频造假与识别</h1><ul>
+<li><p>造假方式</p>
+<ul>
+<li>deepfakes 变分自编码器</li>
+<li>FaceSwap</li>
+<li>Face2Face</li>
+<li>GAN(ProGAN,StyleGAN,CycleGAN)</li>
+</ul>
+</li>
+<li><p>识别方式</p>
+<ul>
+<li>光照估计</li>
+<li>几何估计</li>
+<li>软生物特征模型</li>
+<li>基于脸部地标的检测</li>
+<li>基于CNN网络的检测</li>
+<li>基于眨眼的LRCN模型</li>
+<li>基于频谱的检测</li>
+</ul>
+</li>
+<li><p>检测数据集</p>
+<ul>
+<li>FaceForensics++</li>
+</ul>
+</li>
+</ul>
+<h1 id="变分自编码器-VAE"><a href="#变分自编码器-VAE" class="headerlink" title="变分自编码器(VAE)"></a>变分自编码器(VAE)</h1><ul>
+<li>变换法<br><img src="/images/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/2.png" alt="2"></li>
+<li><img src="/images/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/3.png" alt="3"></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CPSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像语义</title>
+    <url>/2021/07/25/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/</url>
+    <content><![CDATA[<h1 id="场景图自动生成-Neural-Motifs"><a href="#场景图自动生成-Neural-Motifs" class="headerlink" title="场景图自动生成(Neural Motifs)"></a>场景图自动生成(Neural Motifs)</h1><h1 id="scene-Graphs"><a href="#scene-Graphs" class="headerlink" title="scene Graphs"></a><em>scene Graphs</em></h1><p><img src="/images/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/1.png" alt="1"></p>
+<ul>
+<li>三维场景图(牛逼..)</li>
+</ul>
+<h1 id="视频场景识别"><a href="#视频场景识别" class="headerlink" title="视频场景识别"></a>视频场景识别</h1><ul>
+<li>图像序列<ul>
+<li>考虑全局角度的场景运动信息</li>
+<li>引入光流场表示时序上的动态变化</li>
+<li>使用CNN提取每一视频帧的特征，使用统计方法按位进行关键帧特征聚合，采用指标拼接，输入SVM进行分类<em>SA-CNN</em></li>
+</ul>
+</li>
+</ul>
+<h1 id="音频-听觉-场景识别"><a href="#音频-听觉-场景识别" class="headerlink" title="音频(听觉)场景识别"></a>音频(听觉)场景识别</h1><ul>
+<li>CNN同时提取单声道和立体声的音频特征</li>
+<li>提取梅尔频谱倒谱系数，配合隐马尔科夫模型</li>
+</ul>
+<h1 id="短文本场景识别"><a href="#短文本场景识别" class="headerlink" title="短文本场景识别"></a>短文本场景识别</h1><ul>
+<li>朴素贝叶斯+最大熵方法</li>
+<li>LSA挖掘文本语义概念与场景之间的关联关系 </li>
+</ul>
+<h1 id="拓展延伸"><a href="#拓展延伸" class="headerlink" title="拓展延伸"></a>拓展延伸</h1><ul>
+<li><p>挑战：</p>
+<ul>
+<li>大规模数据场景分类，数据的海量增长及类别的不断细分，区分度越来越低，数据类型也更为复杂</li>
+<li>真实场景理解，场景的理解不再是单纯的分类问题，更多的是对内容语义的理解和实时性要求</li>
+</ul>
+</li>
+<li><p>未来：</p>
+<ul>
+<li>提取局部特征：目前的局部特征提取方法大多是提取不同模态的全局信息，没考虑到局部的信息，即各类语义对象</li>
+<li>更复杂的模态融合：捕捉到多种模式之间更复杂的相关性</li>
+</ul>
+</li>
+</ul>
+<h1 id="视频理解"><a href="#视频理解" class="headerlink" title="视频理解"></a>视频理解</h1><ul>
+<li>研究方向<ul>
+<li>视频分类<ul>
+<li>场景分类</li>
+<li>行为识别：对视频中人物行为进行分类 <ul>
+<li>稠密轨迹法<ul>
+<li>稳定性高，可靠性高，速度慢，精度低</li>
+</ul>
+</li>
+<li>双流法<ul>
+<li>精度高，速度慢</li>
+</ul>
+</li>
+<li>三维卷积(C3D,P3D)<ul>
+<li>速度快，精度低于双流法</li>
+</ul>
+</li>
+<li>LSTM+CNN<ul>
+<li>速度慢，精度低</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>目标跟踪</li>
+<li>视频描述<ul>
+<li>传统视频描述</li>
+<li>密集视频描述<ul>
+<li>不足：生成的描述冗余，不连贯，主要集中在如何提高描述的准确性上，很少有研究考虑生成的描述是否足以表示视频中丰富的信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>视频问答</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CPSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>跨社交网络</title>
+    <url>/2021/07/25/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<h1 id="研究概述"><a href="#研究概述" class="headerlink" title="研究概述"></a>研究概述</h1><p><img src="/images/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/1.png" alt="1"></p>
+<ul>
+<li>模型角度：<ul>
+<li>监督方法(需要标签数据):<ul>
+<li><em>classification techniques</em><ul>
+<li>从用户属性中提取特征</li>
+<li>训练分类用以预测用户身份对</li>
+</ul>
+</li>
+<li><em>embedding techniques</em><ul>
+<li>获取用户表示后进行身份关联</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>半监督方法(需要标签数据)<ul>
+<li>在模型学习时同时考虑有标签与无标签的用户身份对</li>
+</ul>
+</li>
+<li>无监督方法(无需标签数据)<ul>
+<li>已有工作较少</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="跨网络社区发现"><a href="#跨网络社区发现" class="headerlink" title="跨网络社区发现"></a>跨网络社区发现</h1><ul>
+<li>常见的社区发现方法<ul>
+<li>基于贝叶斯概率图模型的主题模型</li>
+<li>基于非负矩阵分解的模型</li>
+</ul>
+</li>
+<li>深度学习，能发现高级别潜在属性，</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CPSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>信息可信性</title>
+    <url>/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/</url>
+    <content><![CDATA[<h1 id="谣言检测"><a href="#谣言检测" class="headerlink" title="谣言检测"></a>谣言检测</h1><ul>
+<li><p>相关概念<br><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/1.png" alt="1"></p>
+</li>
+<li><p>有监督：分类</p>
+<ul>
+<li>静态特征：内容特征，用户特征，其他特征</li>
+<li>动态特征：序列结构建模，树结构建模</li>
+</ul>
+</li>
+<li><p>无监督：概率图</p>
+</li>
+</ul>
+<p><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/2.png" alt="2"></p>
+<ul>
+<li><p>引入Attention可以不同单词对于谣言判定的权重不同<br><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/3.png" alt="3"></p>
+</li>
+<li><p>序列结构上下文建模的主要问题：</p>
+<ul>
+<li>上下文模糊：不同推文的隐特征计算，依托的前文和后文的信息应有所区别</li>
+<li>基于RNN构建：无法脱离RNN结构建模，因此存在长期依赖难以学习的问题</li>
+</ul>
+</li>
+</ul>
+<h1 id="谣言抑制"><a href="#谣言抑制" class="headerlink" title="谣言抑制"></a>谣言抑制</h1><ul>
+<li><p>信息传播相关模型：线性阈值模型;传染病模型;SIS模型</p>
+</li>
+<li><p>社区结构：模型OPOAO，DOAM<br><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/4.png" alt="4"></p>
+</li>
+</ul>
+<p><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/5.png" alt="5"></p>
+]]></content>
+      <tags>
+        <tag>CPSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>图像生成</title>
+    <url>/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/</url>
+    <content><![CDATA[<h1 id="自回归模型"><a href="#自回归模型" class="headerlink" title="自回归模型"></a>自回归模型</h1><ul>
+<li>直接明确的概率建模</li>
+<li><em>PixelRNN</em><ul>
+<li>速度慢</li>
+</ul>
+</li>
+<li><em>PixelCNN</em><ul>
+<li>利用CNN建模上下文信息</li>
+<li>仍然从角落开始产生像素</li>
+<li>使用Mask并行训练，但测试时仍按顺序生成</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>明确计算数据似然</li>
+<li>数据似然可以作为较好的度量方法</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>序列化的生成过程，速度慢</li>
+<li>生成顺序如何定义</li>
+<li>长距离依赖问题</li>
+</ul>
+</li>
+</ul>
+<h1 id="变分自编码器-VAE"><a href="#变分自编码器-VAE" class="headerlink" title="变分自编码器(VAE)"></a>变分自编码器(VAE)</h1><ul>
+<li>编码器压缩数据得到隐特征</li>
+<li>解码器根据隐特征还原数据</li>
+<li>舍弃解码器，将编码器用去特征提取</li>
+<li>disCVAE 拆分</li>
+<li>优点<ul>
+<li>定义了概率密度，有迹可循的生成方法</li>
+<li>后验概率可以作为其他任务的特征使用</li>
+<li>本质上概率图模型，易扩展</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>需要通过变分下届推断，不如自回归模型直接定义的尺度</li>
+<li>利用重构损失优化，生成样本模糊</li>
+</ul>
+</li>
+</ul>
+<h1 id="GAN-生成式对抗网络"><a href="#GAN-生成式对抗网络" class="headerlink" title="GAN(生成式对抗网络)"></a>GAN(生成式对抗网络)</h1><ul>
+<li>不直接对数据的概率分布建模</li>
+<li>通过辨别器度量生成数据与真实数据分布的距离<br><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/1.png" alt="1"></li>
+<li><em>CGAN</em>,<em>CGAN with Auxiliary Classifier</em>,<em>SA-GAN</em>,<em>Big-GAN</em>,<em>AttnGAN</em>,<em>Obj-GAN</em>,<em>Story-GAN</em>,<em>SeqAttnGAN</em></li>
+<li>具体模型架构参考视频</li>
+<li>优点<ul>
+<li>博弈形式隐式地度量数据分布的距离</li>
+<li>生成图像质量高</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>训练不稳定，有模态坍塌风险</li>
+<li>无法推断概率</li>
+</ul>
+</li>
+</ul>
+<h1 id="评估指标·"><a href="#评估指标·" class="headerlink" title="评估指标·"></a>评估指标·</h1><p><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2.png" alt="2"></p>
+<ul>
+<li>P(y|x)图片x的分类概率</li>
+<li>P(y)分类结果的边缘概率<br><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/3.png" alt="3"></li>
+<li>各类模型特点<br><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/4.png" alt="4"></li>
+</ul>
+<h1 id="研究方向"><a href="#研究方向" class="headerlink" title="研究方向"></a>研究方向</h1><ul>
+<li>任务方面<ul>
+<li>交互式图像生成</li>
+<li>故事生成</li>
+<li>视频生成</li>
+<li>3D图像生成</li>
+</ul>
+</li>
+<li>模型本身<ul>
+<li>网络结构研究：<em>Instance Norm</em>,<em>Attentive Norm</em></li>
+<li>GAN的稳定性研究</li>
+<li>先验知识的引入</li>
+<li>更好的信息利用方法</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CPSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>话题发现</title>
+    <url>/2021/07/25/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/</url>
+    <content><![CDATA[<h1 id="基于概率模型的话题建模"><a href="#基于概率模型的话题建模" class="headerlink" title="基于概率模型的话题建模"></a>基于概率模型的话题建模</h1><ul>
+<li>基于目标的话题建模：TTM</li>
+<li>基于时间的话题建模：LLA</li>
+<li>基于领域知识的话题建模：Hashtag-LDA</li>
+</ul>
+<h1 id="非概率话题模型方法"><a href="#非概率话题模型方法" class="headerlink" title="非概率话题模型方法"></a>非概率话题模型方法</h1><ul>
+<li>基于文档的话题建模</li>
+<li>基于特征的话题建模</li>
+</ul>
+<h1 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h1><ul>
+<li>话题模型困惑度</li>
+<li>归一化点户信息</li>
+</ul>
+<h1 id="拓展思路"><a href="#拓展思路" class="headerlink" title="拓展思路"></a>拓展思路</h1><ul>
+<li>现有的话题建模方法主要分为基于概率话题模型和基于特征或文档的非概率话题模型</li>
+<li>话题演化分析是分析话题随时间的动态演变，可在内容演化，热度演化等维度对话题进行演化分析</li>
+<li>话题模型选择与预训练新技术相结合</li>
+<li>但是数据集通常较为单一，没有兼顾短文本和长文本特性，未来可在模型兼容性做进一步研究</li>
+<li>同时采用两种模型的方法较少，但是要注意两者存在很强的互补关系</li>
+</ul>
+<h1 id="社交网络中的亲历者发现"><a href="#社交网络中的亲历者发现" class="headerlink" title="社交网络中的亲历者发现"></a>社交网络中的亲历者发现</h1><ul>
+<li><p>位置估计</p>
+<ul>
+<li>基于统计机器学习的亲历者发现<ul>
+<li>基于位置估计的方法<br><img src="/images/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/1.png" alt="1"></li>
+<li>不符合实际情况，人为划定时空范围，干预过多</li>
+<li>基于文本分类的方法<ul>
+<li>针对单一事件类别<br><img src="/images/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/2.png" alt="2"></li>
+<li>人工特征提取针对性过强，泛化性，迁移性差，人为工作繁重，重复度高，引入人为干预，数据量少</li>
+<li>针对多事件类别<br><img src="/images/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/3.png" alt="3"> </li>
+<li>各个事件类别相似度高，方法未实现更高程度的泛化性，无法统一利用数据，汇总数据进行学习</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基于深度学习的亲历者发现<ul>
+<li>使用词嵌入技术的亲历者发现<ul>
+<li>使用词嵌入技术得到词向量，作为统计机器学习的输入特征之一</li>
+</ul>
+</li>
+<li>使用神经网络模型的亲历者发现<ul>
+<li>重点研究文本预处理对实验的影响，使用循环神经网络开展研究</li>
+</ul>
+</li>
+<li>不足之处在于仍然采用统计机器学习方法，未引入端到端的深度学习模型设计思想，可解释性较差</li>
+</ul>
+</li>
+<li>注意力机制<ul>
+<li>增强可解释性<br><img src="/images/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/4.png" alt="4"><br><img src="/images/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/5.png" alt="5"></li>
+</ul>
+</li>
+</ul>
+<h1 id="拓展思路-1"><a href="#拓展思路-1" class="headerlink" title="拓展思路"></a>拓展思路</h1><ul>
+<li>事件类别数量，事件数量，推文数量仍需扩充，多语种的或其他平台的数据</li>
+<li><em>自动标注</em>的短板，人工标注的繁重</li>
+<li>更复杂的模型设计，更先进的技术应用</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CPSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Markdown学习笔记</title>
+    <url>/2021/07/25/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="Markdown学习笔记"><a href="#Markdown学习笔记" class="headerlink" title="Markdown学习笔记"></a>Markdown学习笔记</h1><h2 id="1-标题写法"><a href="#1-标题写法" class="headerlink" title="1.标题写法"></a>1.标题写法</h2><p>前置加“ # ”，一级标题加一个，二级标题加两个，依此类推…（注意不要忽略掉“ # ”后面的空格）</p>
+<h2 id="2-字体"><a href="#2-字体" class="headerlink" title="2.字体"></a>2.字体</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">*斜体文本*</span><br><span class="line">**粗体文本**</span><br><span class="line">***粗斜体文本***</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-分割线"><a href="#3-分割线" class="headerlink" title="3.分割线"></a>3.分割线</h2><p>连续的三个以上的“ * ”或“ - ”</p>
+<h2 id="4-下划线"><a href="#4-下划线" class="headerlink" title="4.下划线"></a>4.下划线</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;u&gt;带下划线文本&lt;/u&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-脚注"><a href="#5-脚注" class="headerlink" title="5.脚注"></a>5.脚注</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[^要注明的文本]</span><br></pre></td></tr></table></figure>
+
+<p>后注与前注有所不同</p>
+<h2 id="6-代码框"><a href="#6-代码框" class="headerlink" title="6.代码框"></a>6.代码框</h2><ul>
+<li><p>连续三个“ ~ ”</p>
+</li>
+<li><p>对于单个代码框可以“ ~ ”…” ~ “链接</p>
+</li>
+</ul>
+<h2 id="7-区块"><a href="#7-区块" class="headerlink" title="7.区块"></a>7.区块</h2><p>​    “ &gt;  “+文字，多层嵌套的话就用多个” &gt; “</p>
+<h2 id="8-链接"><a href="#8-链接" class="headerlink" title="8.链接"></a>8.链接</h2><p>这是一个链接&lt; 网址 &gt;</p>
+<p>这是一个链接[链接名]（网址）</p>
+]]></content>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文本分类</title>
+    <url>/2021/09/12/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="文本分类"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类</h1><h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h2><ul>
+<li>用计算机对文本或其他实体按照一定的分类体系或标准进行自动分类标记</li>
+</ul>
+<h2 id="2-特征表示"><a href="#2-特征表示" class="headerlink" title="2 特征表示"></a>2 特征表示</h2><ul>
+<li><p>BoW词袋模型</p>
+<p>忽略了文本中的词序</p>
+</li>
+<li><p>TF-IDF词频-逆文档频率</p>
+<p>使用词频和逆文档频率来建模文本</p>
+</li>
+<li><p>N-gram</p>
+<p>将相邻的文字和词组信息纳入表征的词典中</p>
+</li>
+<li><p>One-hot热独码</p>
+</li>
+<li><p>Word2vec</p>
+<p>使用局部上下文信息来获取词向量</p>
+</li>
+<li><p>Glove词向量 </p>
+<p>使用局部上下文信息和全局统计特征</p>
+</li>
+</ul>
+<h2 id="3-分类模型"><a href="#3-分类模型" class="headerlink" title="3 分类模型"></a>3 分类模型</h2><h3 id="浅层学习"><a href="#浅层学习" class="headerlink" title="浅层学习"></a>浅层学习</h3><ul>
+<li>NB朴素贝叶斯；HMM</li>
+<li>SVM支持向量机；TSVM</li>
+<li>KNN K近邻；NWKNN</li>
+<li>DT决策树</li>
+<li>RF随机森林；Adaboost；HGBoost；stacking</li>
+</ul>
+<h3 id="深层学习"><a href="#深层学习" class="headerlink" title="深层学习"></a>深层学习</h3><ul>
+<li><p>ReNN规则嵌入神经网络</p>
+<ul>
+<li>递归地学习文本语义和句法树结构，而不需要人为的设置人工特征，这是相较于浅层网络的一大进步。文本当中的单词被视作树的叶子节点，所有节点基于权值计入父亲节点当中，如此递归计算，最终形成整篇的文章表征，用于预测类别标签。</li>
+</ul>
+</li>
+<li><p>MLP多层感知机</p>
+<ul>
+<li>Paragraph Vector的引入，由谷歌的Le和Mikolov等人提出，在CBOW语言模型的预测过程中，引入段落向量来保存段落信息，将前三个词语的词向量与段落向量取平均或拼接，送入MLP来预测下一位置的词语。</li>
+</ul>
+</li>
+<li><p>RNN</p>
+<ul>
+<li><p>独特的时间序列处理方式与文本阅读方式具有一致性。该模型结构能够有效学习历史信息和位置信息，有助于解决长距离依赖问题。</p>
+</li>
+<li><p>LSTM</p>
+</li>
+</ul>
+</li>
+<li><p>CNN卷积神经网络</p>
+<ul>
+<li><strong>基于不同最小单元的模型分类：</strong>按照向量表征的最小单元，可将向量分为，字符向量、词向量、句子向量</li>
+</ul>
+</li>
+<li><p>Attention注意力机制</p>
+<ul>
+<li>Q,K,V</li>
+<li>捕获文本分类任务当中的长距离依赖信息</li>
+</ul>
+</li>
+<li><p>Transformer</p>
+<ul>
+<li>ELMo、GPT、BERT、RoBERT、ALBERT、XLNet</li>
+</ul>
+</li>
+<li><p>GCN图卷积网络</p>
+<ul>
+<li>学习句子当中的语义结构</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CPSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>感知器</title>
+    <url>/2021/07/25/%E6%84%9F%E7%9F%A5%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h1><p>两类线性可分的模式类：$w_1$，$w_2$，设$d(X) = W^TX$,其中$W = [w_1,w_2,…,w_n,w_{n+1}]^T$,$X=[x_1,x_2,…,x_n,1]^T$,$d(X)&gt;0$.</p>
+<p>感知器算法通过对已知类别的训练样本集的学习，寻找一个满足上式的权向量。</p>
+<h1 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h1><ul>
+<li>选择N个分属于$w_1$和$w_2$类的模式样本构成训练样本集<br>$${X_1,…X_N}$$<br>构成增广向量形式，并进行规范化处理。任取权向量初始值$W(1)$，开始迭代，迭代次数$k=1$。</li>
+<li>用全部训练样本进行一轮迭代，计算${W^T(k)}X_i$的值，并修正权向量。<br>分两种情况更新权向量的值：<ol>
+<li>若${W^T(k)}X_i \leqslant0$，分类器对第$i$个模式做了错误分类，权向量校正为$W(k+1)=W(k)+cX_i$  $c$：正的校正增量</li>
+<li>若${W^T(k)}X_i&gt;0$，分类正确，权向量不变：<br>$$W(k+1)=W(k)$$</li>
+</ol>
+</li>
+<li>分析分类结果，只要有一个错误分类，回到第二步，直至所有样本正确分类</li>
+</ul>
+<h1 id="算法特点"><a href="#算法特点" class="headerlink" title="算法特点"></a>算法特点</h1><p>收敛性：经过有限次迭代运算后，求出了一个使所有样本都能正确分类的$W$，则称算法是收敛的。<br>收敛条件：模式类别线性可分</p>
+<h1 id="算法代码1"><a href="#算法代码1" class="headerlink" title="算法代码1"></a>算法代码1</h1><p>编写感知器算法程序，求下列模式分类的解向量</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import numpy as np </span><br><span class="line">import pandas as pd</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">from mpl_toolkits.mplot3d import Axes3D</span><br><span class="line">w1 = [[0 , 0 , 0 , 1] , [1 , 0 , 0 , 1] , [1 , 0 , 1 , 1] , [1 , 1 , 0 , 1] , [0 , 0 , -1 , -1] , [0 , -1 , -1 , -1] , [0 , -1 , 0 , -1] , [-1 , -1 , -1 , -1]]</span><br><span class="line">w = [-1 , -2 , -2 , 0]</span><br><span class="line">X = [[0 , 0 , 0],</span><br><span class="line">     [1 , 0 , 0],</span><br><span class="line">     [1 , 0 , 1],</span><br><span class="line">     [1 , 1 , 0],</span><br><span class="line">     [0 , 0 , -1],</span><br><span class="line">     [0 , -1 , -1],</span><br><span class="line">     [0 , -1 , 0],</span><br><span class="line">     [-1 , -1 , -1]]</span><br><span class="line">X=np.array(X)</span><br><span class="line">flag = 0</span><br><span class="line">res = [0 , 0 , 0 , 0 , 0 , 0 , 0 , 0]</span><br><span class="line">while(flag != 8):</span><br><span class="line">    flag = 0</span><br><span class="line">    for i in range(8):</span><br><span class="line">        res[i] = w[0] * w1[i][0] + w[1] * w1[i][1] + w[2] * w1[i][2] + w[3] * w1[i][3]</span><br><span class="line">        if res[i] &lt;= 0:</span><br><span class="line">            w[0] = w[0]+w1[i][0]</span><br><span class="line">            w[1] = w[1]+w1[i][1]</span><br><span class="line">            w[2] = w[2]+w1[i][2]</span><br><span class="line">            w[3] = w[3]+w1[i][3]</span><br><span class="line">            flag = flag - 1</span><br><span class="line">        else: </span><br><span class="line">            w = w</span><br><span class="line">            flag = flag + 1</span><br><span class="line">print(w)</span><br><span class="line"></span><br><span class="line">fig = plt.figure(figsize=(12, 8))</span><br><span class="line"># 创建 3D 坐标系</span><br><span class="line">ax = fig.gca(fc=&#x27;whitesmoke&#x27;, projection=&#x27;3d&#x27; )</span><br><span class="line">x1 = np.linspace(0, 2, 9)</span><br><span class="line">x2 = np.linspace(0, 2, 9)</span><br><span class="line">x1,x2 = np.meshgrid(x1, x2)</span><br><span class="line">x3 = (-w[3] - w[0]*x1 -w[1]*x2)/w[2]</span><br><span class="line"></span><br><span class="line">ax.plot_surface(X=x1,</span><br><span class="line">                Y=x2,</span><br><span class="line">                Z=x3,</span><br><span class="line">                color=&#x27;b&#x27;,</span><br><span class="line">                alpha=0.2</span><br><span class="line">               )</span><br><span class="line">ax.set(xlabel=&#x27;X&#x27;,</span><br><span class="line">       ylabel=&#x27;Y&#x27;,</span><br><span class="line">       zlabel=&#x27;Z&#x27;,</span><br><span class="line">       xlim=(0, 2),</span><br><span class="line">       ylim=(0, 2),</span><br><span class="line">       zlim=(0, 2),</span><br><span class="line">       xticks=np.arange(0, 2, 1),</span><br><span class="line">       yticks=np.arange(0, 2, 1),</span><br><span class="line">       zticks=np.arange(0, 2, 1)</span><br><span class="line">      )</span><br><span class="line">    </span><br><span class="line">half = int(len(X)/2)</span><br><span class="line">X[4:,:] = - X[4:,:]</span><br><span class="line">x = X[:half, 0]  </span><br><span class="line">y = X[:half, 1]  </span><br><span class="line">z = X[:half, 2]  </span><br><span class="line"># fig = plt.figure()</span><br><span class="line"># ax = Axes3D(fig)</span><br><span class="line">ax.scatter(x, y, z,c=&#x27;y&#x27;,marker=&#x27;o&#x27;)</span><br><span class="line"></span><br><span class="line">x2 = X[half:, 0]  </span><br><span class="line">y2 = X[half:, 1]  </span><br><span class="line">z2 = X[half:, 2]  </span><br><span class="line">ax.scatter(x2, y2, z2,c=&#x27;r&#x27;,marker=&#x27;x&#x27;)</span><br><span class="line">for i_x, i_y,i_z in zip(X[:,0],X[:,1],X[:,2]):</span><br><span class="line">    ax.text(i_x, i_y,i_z, &#x27;(&#123;&#125;, &#123;&#125;,&#123;&#125;)&#x27;.format(int(i_x), int(i_y),int(i_z)))</span><br><span class="line">    ax.set_zlabel(&#x27;Z&#x27;)</span><br><span class="line">    ax.set_ylabel(&#x27;Y&#x27;)</span><br><span class="line">    ax.set_xlabel(&#x27;X&#x27;)</span><br><span class="line"></span><br><span class="line">plt.show()    </span><br></pre></td></tr></table></figure>
+
+<h1 id="算法代码2"><a href="#算法代码2" class="headerlink" title="算法代码2"></a>算法代码2</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import numpy as np </span><br><span class="line">import pandas as pd</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">from mpl_toolkits.mplot3d import Axes3D  </span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    path =  &#x27;data.txt&#x27;</span><br><span class="line">    data = pd.read_csv(path, header=None, names=[&#x27;x&#x27;, &#x27;y&#x27;,&#x27;z&#x27;])</span><br><span class="line">    X = np.array(data.iloc[:,:])</span><br><span class="line"></span><br><span class="line">    X = np.column_stack((X, np.ones((len(X),1))))   </span><br><span class="line">    X[4:,:] = - X[4:,:]</span><br><span class="line">    </span><br><span class="line">    c = 1</span><br><span class="line">    w = np.array([-1,-2,-2,0])</span><br><span class="line">    flag = True</span><br><span class="line">    cnt = 0</span><br><span class="line">    while flag:</span><br><span class="line">        cnt += 1</span><br><span class="line">        flag = False</span><br><span class="line">        for x in X:</span><br><span class="line">            # print(x)</span><br><span class="line"></span><br><span class="line">            if w @ x &lt;= 0:</span><br><span class="line">                w = w + c*x</span><br><span class="line">                flag = True</span><br><span class="line">            </span><br><span class="line">    print(w)</span><br><span class="line">    print(cnt)</span><br><span class="line">    </span><br><span class="line">    fig = plt.figure(figsize=(12, 8))</span><br><span class="line">    </span><br><span class="line">    # 创建 3D 坐标系</span><br><span class="line">    ax = fig.gca(fc=&#x27;whitesmoke&#x27;,</span><br><span class="line">                projection=&#x27;3d&#x27; </span><br><span class="line">                )</span><br><span class="line"></span><br><span class="line">    x1 = np.linspace(0, 2, 9)</span><br><span class="line">    x2 = np.linspace(0, 2, 9)</span><br><span class="line">    </span><br><span class="line">    x1,x2 = np.meshgrid(x1, x2)</span><br><span class="line">    x3 = (-w[3] - w[0]*x1 -w[1]*x2)/w[2]</span><br><span class="line">    ax.plot_surface(X=x1,</span><br><span class="line">                Y=x2,</span><br><span class="line">                Z=x3,</span><br><span class="line">                color=&#x27;b&#x27;,</span><br><span class="line">                alpha=0.2</span><br><span class="line">               )</span><br><span class="line">    ax.set(xlabel=&#x27;X&#x27;,</span><br><span class="line">       ylabel=&#x27;Y&#x27;,</span><br><span class="line">       zlabel=&#x27;Z&#x27;,</span><br><span class="line">       xlim=(0, 2),</span><br><span class="line">       ylim=(0, 2),</span><br><span class="line">       zlim=(0, 2),</span><br><span class="line">       xticks=np.arange(0, 2, 1),</span><br><span class="line">       yticks=np.arange(0, 2, 1),</span><br><span class="line">       zticks=np.arange(0, 2, 1)</span><br><span class="line">      )</span><br><span class="line">    </span><br><span class="line">    half = int(len(X)/2)</span><br><span class="line">    X[4:,:] = - X[4:,:]</span><br><span class="line">    x = X[:half, 0]  </span><br><span class="line">    y = X[:half, 1]  </span><br><span class="line">    z = X[:half, 2]</span><br><span class="line">    ax.scatter(x, y, z,c=&#x27;y&#x27;,marker=&#x27;o&#x27;)</span><br><span class="line"></span><br><span class="line">    x2 = X[half:, 0]  </span><br><span class="line">    y2 = X[half:, 1]  </span><br><span class="line">    z2 = X[half:, 2]  </span><br><span class="line">    ax.scatter(x2, y2, z2,c=&#x27;r&#x27;,marker=&#x27;x&#x27;)</span><br><span class="line">    for i_x, i_y,i_z in zip(X[:,0],X[:,1],X[:,2]):</span><br><span class="line">        ax.text(i_x, i_y,i_z, &#x27;(&#123;&#125;, &#123;&#125;,&#123;&#125;)&#x27;.format(int(i_x), int(i_y),int(i_z)))</span><br><span class="line">    ax.set_zlabel(&#x27;Z&#x27;)</span><br><span class="line">    ax.set_ylabel(&#x27;Y&#x27;)</span><br><span class="line">    ax.set_xlabel(&#x27;X&#x27;)</span><br><span class="line"></span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>对于$M$类模式应存在$M$个判决函数：{$d_i$，$i=1,…M$}</p>
+<p><em>算法主要内容</em><br>设有$M$种模式类别：$w_1$,$w_2$,…,$w_M$<br>设其权向量初值为：$W_j(1)$,$j=1,…,M$<br>训练样本为增广向量形式，但不需要规范化处理<br>第$k$次迭代时，一个属于$w_i$类的模式样本$X$被送入分类器，计算所有判别函数<br>$$d_j(k)=W_j^T(k)X,j=1,…,M$$<br>分两种情况修改权向量：</p>
+<ul>
+<li><p>若$d_i(k)&gt;d_j(k),\forall j\ne i;j=1,2,…,M$则权向量不变；</p>
+<p>$$W_j(k+1)=W_j(k),j=1,2,…,M$$</p>
+</li>
+<li><p>若第$l$个权向量使$d_i(k)\leqslant d_i(k)$，则相应的权向量做调整，即:</p>
+</li>
+</ul>
+<p>$$\left{\begin{matrix}<br>W_i(k+1)=W_i(k)+cX,\<br>Wl(k+1)=W_l(k)-cX,\<br>W_j(k+1)=W_j(k),j\ne i,l<br>\end{matrix}\right.<br>其中c为正的校正增量<br>$$</p>
+]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+</search>
