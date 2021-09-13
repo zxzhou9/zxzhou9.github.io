@@ -27,15 +27,15 @@
 <meta property="og:site_name" content="zzZzx&#39;s blog">
 <meta property="og:description" content="自回归模型 直接明确的概率建模 PixelRNN 速度慢   PixelCNN 利用CNN建模上下文信息 仍然从角落开始产生像素 使用Mask并行训练，但测试时仍按顺序生成   优点 明确计算数据似然 数据似然可以作为较好的度量方法   缺点 序列化的生成过程，速度慢 生成顺序如何定义 长距离依赖问题    变分自编码器(VAE) 编码器压缩数据得到隐特征 解码器根据隐特征还原数据 舍弃解码器，将">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zxzhou9.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-09-37-17.png">
-<meta property="og:image" content="https://zxzhou9.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-00-59.png">
-<meta property="og:image" content="https://zxzhou9.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-11.png">
-<meta property="og:image" content="https://zxzhou9.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-54.png">
+<meta property="og:image" content="https://zxzhou9.github.io/hexo/hexo/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-09-37-17.png">
+<meta property="og:image" content="https://zxzhou9.github.io/hexo/hexo/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-00-59.png">
+<meta property="og:image" content="https://zxzhou9.github.io/hexo/hexo/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-11.png">
+<meta property="og:image" content="https://zxzhou9.github.io/hexo/hexo/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-54.png">
 <meta property="article:published_time" content="2021-07-25T03:38:14.259Z">
 <meta property="article:modified_time" content="2021-09-13T01:28:02.189Z">
 <meta property="article:author" content="zx zhou">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zxzhou9.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-09-37-17.png">
+<meta name="twitter:image" content="https://zxzhou9.github.io/hexo/hexo/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-09-37-17.png">
 
 <link rel="canonical" href="https://zxzhou9.github.io/hexo/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/">
 
@@ -250,7 +250,7 @@
 </ul>
 <h1 id="GAN-生成式对抗网络"><a href="#GAN-生成式对抗网络" class="headerlink" title="GAN(生成式对抗网络)"></a>GAN(生成式对抗网络)</h1><ul>
 <li>不直接对数据的概率分布建模</li>
-<li>通过辨别器度量生成数据与真实数据分布的距离<br><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-09-37-17.png"></li>
+<li>通过辨别器度量生成数据与真实数据分布的距离<br><img src="/hexo/hexo/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-09-37-17.png"></li>
 <li><em>CGAN</em>,<em>CGAN with Auxiliary Classifier</em>,<em>SA-GAN</em>,<em>Big-GAN</em>,<em>AttnGAN</em>,<em>Obj-GAN</em>,<em>Story-GAN</em>,<em>SeqAttnGAN</em></li>
 <li>具体模型架构参考视频</li>
 <li>优点<ul>
@@ -264,11 +264,11 @@
 </ul>
 </li>
 </ul>
-<h1 id="评估指标·"><a href="#评估指标·" class="headerlink" title="评估指标·"></a>评估指标·</h1><p><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-00-59.png"></p>
+<h1 id="评估指标·"><a href="#评估指标·" class="headerlink" title="评估指标·"></a>评估指标·</h1><p><img src="/hexo/hexo/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-00-59.png"></p>
 <ul>
 <li>P(y|x)图片x的分类概率</li>
-<li>P(y)分类结果的边缘概率<br><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-11.png"></li>
-<li>各类模型特点<br><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-54.png"></li>
+<li>P(y)分类结果的边缘概率<br><img src="/hexo/hexo/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-11.png"></li>
+<li>各类模型特点<br><img src="/hexo/hexo/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-54.png"></li>
 </ul>
 <h1 id="研究方向"><a href="#研究方向" class="headerlink" title="研究方向"></a>研究方向</h1><ul>
 <li>任务方面<ul>
