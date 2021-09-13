@@ -153,6 +153,140 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/09/12/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/12/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/" class="post-title-link" itemprop="url">文本分类</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-12 15:47:58" itemprop="dateCreated datePublished" datetime="2021-09-12T15:47:58+08:00">2021-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-13 15:36:47" itemprop="dateModified" datetime="2021-09-13T15:36:47+08:00">2021-09-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="文本分类"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类</h1><h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h2><ul>
+<li>用计算机对文本或其他实体按照一定的分类体系或标准进行自动分类标记</li>
+</ul>
+<h2 id="2-特征表示"><a href="#2-特征表示" class="headerlink" title="2 特征表示"></a>2 特征表示</h2><ul>
+<li><p>BoW词袋模型</p>
+<p>忽略了文本中的词序</p>
+</li>
+<li><p>TF-IDF词频-逆文档频率</p>
+<p>使用词频和逆文档频率来建模文本</p>
+</li>
+<li><p>N-gram</p>
+<p>将相邻的文字和词组信息纳入表征的词典中</p>
+</li>
+<li><p>One-hot热独码</p>
+</li>
+<li><p>Word2vec</p>
+<p>使用局部上下文信息来获取词向量</p>
+</li>
+<li><p>Glove词向量 </p>
+<p>使用局部上下文信息和全局统计特征</p>
+</li>
+</ul>
+<h2 id="3-分类模型"><a href="#3-分类模型" class="headerlink" title="3 分类模型"></a>3 分类模型</h2><h3 id="浅层学习"><a href="#浅层学习" class="headerlink" title="浅层学习"></a>浅层学习</h3><ul>
+<li>NB朴素贝叶斯；HMM</li>
+<li>SVM支持向量机；TSVM</li>
+<li>KNN K近邻；NWKNN</li>
+<li>DT决策树</li>
+<li>RF随机森林；Adaboost；HGBoost；stacking</li>
+</ul>
+<h3 id="深层学习"><a href="#深层学习" class="headerlink" title="深层学习"></a>深层学习</h3><ul>
+<li><p>ReNN规则嵌入神经网络</p>
+<ul>
+<li>递归地学习文本语义和句法树结构，而不需要人为的设置人工特征，这是相较于浅层网络的一大进步。文本当中的单词被视作树的叶子节点，所有节点基于权值计入父亲节点当中，如此递归计算，最终形成整篇的文章表征，用于预测类别标签。</li>
+</ul>
+</li>
+<li><p>MLP多层感知机</p>
+<ul>
+<li>Paragraph Vector的引入，由谷歌的Le和Mikolov等人提出，在CBOW语言模型的预测过程中，引入段落向量来保存段落信息，将前三个词语的词向量与段落向量取平均或拼接，送入MLP来预测下一位置的词语。</li>
+</ul>
+</li>
+<li><p>RNN</p>
+<ul>
+<li><p>独特的时间序列处理方式与文本阅读方式具有一致性。该模型结构能够有效学习历史信息和位置信息，有助于解决长距离依赖问题。</p>
+</li>
+<li><p>LSTM</p>
+</li>
+</ul>
+</li>
+<li><p>CNN卷积神经网络</p>
+<ul>
+<li><strong>基于不同最小单元的模型分类：</strong>按照向量表征的最小单元，可将向量分为，字符向量、词向量、句子向量</li>
+</ul>
+</li>
+<li><p>Attention注意力机制</p>
+<ul>
+<li>Q,K,V</li>
+<li>捕获文本分类任务当中的长距离依赖信息</li>
+</ul>
+</li>
+<li><p>Transformer</p>
+<ul>
+<li>ELMo、GPT、BERT、RoBERT、ALBERT、XLNet</li>
+</ul>
+</li>
+<li><p>GCN图卷积网络</p>
+<ul>
+<li>学习句子当中的语义结构</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/07/25/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1087,88 +1221,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/07/25/attention/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zx zhou">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zzZzx's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/25/attention/" class="post-title-link" itemprop="url">Attention</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-25 11:33:06" itemprop="dateCreated datePublished" datetime="2021-07-25T11:33:06+08:00">2021-07-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-13 14:10:09" itemprop="dateModified" datetime="2021-09-13T14:10:09+08:00">2021-09-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Seq2Seq模型"><a href="#Seq2Seq模型" class="headerlink" title="Seq2Seq模型"></a>Seq2Seq模型</h1><ul>
-<li><p>输入某个序列到模型，转换为另一个序列<br><img src="/images/attention/1.png" alt="1"></p>
-</li>
-<li><p>编码器<br><img src="/images/attention/2.png" alt="2"></p>
-</li>
-<li><p>解码器<br><img src="/images/attention/3.png" alt="3"></p>
-</li>
-<li><p>时间序列展开</p>
-</li>
-</ul>
-<p><img src="/images/attention/4.png" alt="4"></p>
-<ul>
-<li>EOC 初始输入</li>
-</ul>
-<h1 id="Attention机制"><a href="#Attention机制" class="headerlink" title="Attention机制"></a>Attention机制</h1><p><img src="/images/attention/5.png" alt="5"></p>
-<p><img src="/images/attention/6.png" alt="6"></p>
-<p><img src="/images/attention/7.png" alt="7"></p>
-<p><img src="/images/attention/8.png" alt="8"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1237,12 +1289,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
