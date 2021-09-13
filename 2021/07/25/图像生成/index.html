@@ -20,15 +20,24 @@
     var CONFIG = {"hostname":".github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zzZzx&#39;s blog">
-<meta property="og:url" content="http://.github.io/archives/2021/index.html">
+  <meta name="description" content="自回归模型 直接明确的概率建模 PixelRNN 速度慢   PixelCNN 利用CNN建模上下文信息 仍然从角落开始产生像素 使用Mask并行训练，但测试时仍按顺序生成   优点 明确计算数据似然 数据似然可以作为较好的度量方法   缺点 序列化的生成过程，速度慢 生成顺序如何定义 长距离依赖问题    变分自编码器(VAE) 编码器压缩数据得到隐特征 解码器根据隐特征还原数据 舍弃解码器，将">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图像生成">
+<meta property="og:url" content="http://.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/index.html">
 <meta property="og:site_name" content="zzZzx&#39;s blog">
+<meta property="og:description" content="自回归模型 直接明确的概率建模 PixelRNN 速度慢   PixelCNN 利用CNN建模上下文信息 仍然从角落开始产生像素 使用Mask并行训练，但测试时仍按顺序生成   优点 明确计算数据似然 数据似然可以作为较好的度量方法   缺点 序列化的生成过程，速度慢 生成顺序如何定义 长距离依赖问题    变分自编码器(VAE) 编码器压缩数据得到隐特征 解码器根据隐特征还原数据 舍弃解码器，将">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-09-37-17.png">
+<meta property="og:image" content="http://.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-00-59.png">
+<meta property="og:image" content="http://.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-11.png">
+<meta property="og:image" content="http://.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-54.png">
+<meta property="article:published_time" content="2021-07-25T03:38:14.259Z">
+<meta property="article:modified_time" content="2021-09-13T01:28:02.189Z">
 <meta property="article:author" content="zx zhou">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-09-37-17.png">
 
-<link rel="canonical" href="http://.github.io/archives/2021/">
+<link rel="canonical" href="http://.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/">
 
 
 <script id="page-configurations">
@@ -36,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | zzZzx's blog</title>
+  <title>图像生成 | zzZzx's blog</title>
   
 
 
@@ -147,234 +156,165 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 11 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          图像生成
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-25 11:38:14" itemprop="dateCreated datePublished" datetime="2021-07-25T11:38:14+08:00">2021-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 09:28:02" itemprop="dateModified" datetime="2021-09-13T09:28:02+08:00">2021-09-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-25T11:38:22+08:00"
-              content="2021-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/25/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/" itemprop="url">
-            <span itemprop="name">跨社交网络</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-25T11:38:21+08:00"
-              content="2021-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/25/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/" itemprop="url">
-            <span itemprop="name">话题发现</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-25T11:38:19+08:00"
-              content="2021-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/25/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/" itemprop="url">
-            <span itemprop="name">视频取证</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-25T11:38:18+08:00"
-              content="2021-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/25/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/" itemprop="url">
-            <span itemprop="name">群体画像</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-25T11:38:16+08:00"
-              content="2021-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/25/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/" itemprop="url">
-            <span itemprop="name">标题党检测</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-25T11:38:15+08:00"
-              content="2021-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/25/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/" itemprop="url">
-            <span itemprop="name">图像语义</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-25T11:38:14+08:00"
-              content="2021-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/" itemprop="url">
-            <span itemprop="name">图像生成</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-25T11:33:34+08:00"
-              content="2021-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/" itemprop="url">
-            <span itemprop="name">信息可信性</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-25T11:33:32+08:00"
-              content="2021-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/25/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/" itemprop="url">
-            <span itemprop="name">人格检测_用户画像</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-07-25T11:33:06+08:00"
-              content="2021-07-25">
-          07-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/07/25/attention/" itemprop="url">
-            <span itemprop="name">Attention</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h1 id="自回归模型"><a href="#自回归模型" class="headerlink" title="自回归模型"></a>自回归模型</h1><ul>
+<li>直接明确的概率建模</li>
+<li><em>PixelRNN</em><ul>
+<li>速度慢</li>
+</ul>
+</li>
+<li><em>PixelCNN</em><ul>
+<li>利用CNN建模上下文信息</li>
+<li>仍然从角落开始产生像素</li>
+<li>使用Mask并行训练，但测试时仍按顺序生成</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>明确计算数据似然</li>
+<li>数据似然可以作为较好的度量方法</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>序列化的生成过程，速度慢</li>
+<li>生成顺序如何定义</li>
+<li>长距离依赖问题</li>
+</ul>
+</li>
+</ul>
+<h1 id="变分自编码器-VAE"><a href="#变分自编码器-VAE" class="headerlink" title="变分自编码器(VAE)"></a>变分自编码器(VAE)</h1><ul>
+<li>编码器压缩数据得到隐特征</li>
+<li>解码器根据隐特征还原数据</li>
+<li>舍弃解码器，将编码器用去特征提取</li>
+<li>disCVAE 拆分</li>
+<li>优点<ul>
+<li>定义了概率密度，有迹可循的生成方法</li>
+<li>后验概率可以作为其他任务的特征使用</li>
+<li>本质上概率图模型，易扩展</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>需要通过变分下届推断，不如自回归模型直接定义的尺度</li>
+<li>利用重构损失优化，生成样本模糊</li>
+</ul>
+</li>
+</ul>
+<h1 id="GAN-生成式对抗网络"><a href="#GAN-生成式对抗网络" class="headerlink" title="GAN(生成式对抗网络)"></a>GAN(生成式对抗网络)</h1><ul>
+<li>不直接对数据的概率分布建模</li>
+<li>通过辨别器度量生成数据与真实数据分布的距离<br><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-09-37-17.png"></li>
+<li><em>CGAN</em>,<em>CGAN with Auxiliary Classifier</em>,<em>SA-GAN</em>,<em>Big-GAN</em>,<em>AttnGAN</em>,<em>Obj-GAN</em>,<em>Story-GAN</em>,<em>SeqAttnGAN</em></li>
+<li>具体模型架构参考视频</li>
+<li>优点<ul>
+<li>博弈形式隐式地度量数据分布的距离</li>
+<li>生成图像质量高</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>训练不稳定，有模态坍塌风险</li>
+<li>无法推断概率</li>
+</ul>
+</li>
+</ul>
+<h1 id="评估指标·"><a href="#评估指标·" class="headerlink" title="评估指标·"></a>评估指标·</h1><p><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-00-59.png"></p>
+<ul>
+<li>P(y|x)图片x的分类概率</li>
+<li>P(y)分类结果的边缘概率<br><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-11.png"></li>
+<li>各类模型特点<br><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-54.png"></li>
+</ul>
+<h1 id="研究方向"><a href="#研究方向" class="headerlink" title="研究方向"></a>研究方向</h1><ul>
+<li>任务方面<ul>
+<li>交互式图像生成</li>
+<li>故事生成</li>
+<li>视频生成</li>
+<li>3D图像生成</li>
+</ul>
+</li>
+<li>模型本身<ul>
+<li>网络结构研究：<em>Instance Norm</em>,<em>Attentive Norm</em></li>
+<li>GAN的稳定性研究</li>
+<li>先验知识的引入</li>
+<li>更好的信息利用方法</li>
+</ul>
+</li>
+</ul>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/" rel="prev" title="信息可信性">
+      <i class="fa fa-chevron-left"></i> 信息可信性
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/07/25/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/" rel="next" title="图像语义">
+      图像语义 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+  
+  
 
 
 
@@ -426,6 +366,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">自回归模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%98%E5%88%86%E8%87%AA%E7%BC%96%E7%A0%81%E5%99%A8-VAE"><span class="nav-number">2.</span> <span class="nav-text">变分自编码器(VAE)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GAN-%E7%94%9F%E6%88%90%E5%BC%8F%E5%AF%B9%E6%8A%97%E7%BD%91%E7%BB%9C"><span class="nav-number">3.</span> <span class="nav-text">GAN(生成式对抗网络)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%84%E4%BC%B0%E6%8C%87%E6%A0%87%C2%B7"><span class="nav-number">4.</span> <span class="nav-text">评估指标·</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91"><span class="nav-number">5.</span> <span class="nav-text">研究方向</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

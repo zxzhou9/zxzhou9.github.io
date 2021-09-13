@@ -153,7 +153,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/27/self-attention/">
+    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/25/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -167,7 +167,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/27/self-attention/" class="post-title-link" itemprop="url">self-attention</a>
+            <a href="/2021/07/25/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">跨社交网络</a>
         </h2>
 
         <div class="post-meta">
@@ -176,10 +176,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-07-27 16:31:30 / Modified: 21:52:42" itemprop="dateCreated datePublished" datetime="2021-07-27T16:31:30+08:00">2021-07-27</time>
+              <time title="Created: 2021-07-25 11:38:22" itemprop="dateCreated datePublished" datetime="2021-07-25T11:38:22+08:00">2021-07-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 09:32:46" itemprop="dateModified" datetime="2021-09-13T09:32:46+08:00">2021-09-13</time>
+              </span>
 
           
 
@@ -192,24 +198,39 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Seq2Seq模型"><a href="#Seq2Seq模型" class="headerlink" title="Seq2Seq模型"></a>Seq2Seq模型</h1><ul>
-<li><p>输入某个序列到模型，转换为另一个序列<br><img src="/Users/zxzhou/hexo/source/_posts/self-attention/2021-07-17-13-50-48.png"></p>
+          <h1 id="研究概述"><a href="#研究概述" class="headerlink" title="研究概述"></a>研究概述</h1><ul>
+<li>模型角度：<ul>
+<li>监督方法(需要标签数据):<ul>
+<li><em>classification techniques</em><ul>
+<li>从用户属性中提取特征</li>
+<li>训练分类用以预测用户身份对</li>
+</ul>
 </li>
-<li><p>编码器<br><img src="/Users/zxzhou/hexo/source/_posts/self-attention/2021-07-17-15-24-18.png"></p>
-</li>
-<li><p>解码器<br><img src="/Users/zxzhou/hexo/source/_posts/self-attention/2021-07-17-14-32-01.png"></p>
-</li>
-<li><p>时间序列展开</p>
+<li><em>embedding techniques</em><ul>
+<li>获取用户表示后进行身份关联</li>
+</ul>
 </li>
 </ul>
-<p><img src="/Users/zxzhou/hexo/source/_posts/self-attention/2021-07-17-14-50-34.png"></p>
-<ul>
-<li>EOC 初始输入</li>
+</li>
+<li>半监督方法(需要标签数据)<ul>
+<li>在模型学习时同时考虑有标签与无标签的用户身份对</li>
 </ul>
-<h1 id="Attention机制"><a href="#Attention机制" class="headerlink" title="Attention机制"></a>Attention机制</h1><p><img src="/Users/zxzhou/hexo/source/_posts/self-attention/2021-07-17-14-55-50.png"></p>
-<p><img src="/Users/zxzhou/hexo/source/_posts/self-attention/2021-07-17-15-40-44.png"></p>
-<p><img src="/Users/zxzhou/hexo/source/_posts/self-attention/2021-07-17-16-23-22.png"></p>
-<p><img src="/Users/zxzhou/hexo/source/_posts/self-attention/2021-07-17-16-27-03.png"></p>
+</li>
+<li>无监督方法(无需标签数据)<ul>
+<li>已有工作较少</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="跨网络社区发现"><a href="#跨网络社区发现" class="headerlink" title="跨网络社区发现"></a>跨网络社区发现</h1><ul>
+<li>常见的社区发现方法<ul>
+<li>基于贝叶斯概率图模型的主题模型</li>
+<li>基于非负矩阵分解的模型</li>
+</ul>
+</li>
+<li>深度学习，能发现高级别潜在属性，</li>
+</ul>
 
       
     </div>
@@ -229,7 +250,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/27/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/">
+    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/25/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -243,7 +264,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/27/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/" class="post-title-link" itemprop="url">标题党检测</a>
+            <a href="/2021/07/25/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/" class="post-title-link" itemprop="url">话题发现</a>
         </h2>
 
         <div class="post-meta">
@@ -252,10 +273,321 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-07-27 15:23:03 / Modified: 16:55:23" itemprop="dateCreated datePublished" datetime="2021-07-27T15:23:03+08:00">2021-07-27</time>
+              <time title="Created: 2021-07-25 11:38:21" itemprop="dateCreated datePublished" datetime="2021-07-25T11:38:21+08:00">2021-07-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 09:26:14" itemprop="dateModified" datetime="2021-09-13T09:26:14+08:00">2021-09-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="基于概率模型的话题建模"><a href="#基于概率模型的话题建模" class="headerlink" title="基于概率模型的话题建模"></a>基于概率模型的话题建模</h1><ul>
+<li>基于目标的话题建模：TTM</li>
+<li>基于时间的话题建模：LLA</li>
+<li>基于领域知识的话题建模：Hashtag-LDA</li>
+</ul>
+<h1 id="非概率话题模型方法"><a href="#非概率话题模型方法" class="headerlink" title="非概率话题模型方法"></a>非概率话题模型方法</h1><ul>
+<li>基于文档的话题建模</li>
+<li>基于特征的话题建模</li>
+</ul>
+<h1 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h1><ul>
+<li>话题模型困惑度</li>
+<li>归一化点户信息</li>
+</ul>
+<h1 id="拓展思路"><a href="#拓展思路" class="headerlink" title="拓展思路"></a>拓展思路</h1><ul>
+<li>现有的话题建模方法主要分为基于概率话题模型和基于特征或文档的非概率话题模型</li>
+<li>话题演化分析是分析话题随时间的动态演变，可在内容演化，热度演化等维度对话题进行演化分析</li>
+<li>话题模型选择与预训练新技术相结合</li>
+<li>但是数据集通常较为单一，没有兼顾短文本和长文本特性，未来可在模型兼容性做进一步研究</li>
+<li>同时采用两种模型的方法较少，但是要注意两者存在很强的互补关系</li>
+</ul>
+<h1 id="社交网络中的亲历者发现"><a href="#社交网络中的亲历者发现" class="headerlink" title="社交网络中的亲历者发现"></a>社交网络中的亲历者发现</h1><ul>
+<li><p>位置估计</p>
+<ul>
+<li>基于统计机器学习的亲历者发现<ul>
+<li>基于位置估计的方法<br><img src="/2021/07/25/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/2021-07-20-20-01-31.png"></li>
+<li>不符合实际情况，人为划定时空范围，干预过多</li>
+<li>基于文本分类的方法<ul>
+<li>针对单一事件类别<br><img src="/2021/07/25/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/2021-07-20-20-02-54.png"></li>
+<li>人工特征提取针对性过强，泛化性，迁移性差，人为工作繁重，重复度高，引入人为干预，数据量少</li>
+<li>针对多事件类别<br><img src="/2021/07/25/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/2021-07-20-20-05-50.png"> </li>
+<li>各个事件类别相似度高，方法未实现更高程度的泛化性，无法统一利用数据，汇总数据进行学习</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>基于深度学习的亲历者发现<ul>
+<li>使用词嵌入技术的亲历者发现<ul>
+<li>使用词嵌入技术得到词向量，作为统计机器学习的输入特征之一</li>
+</ul>
+</li>
+<li>使用神经网络模型的亲历者发现<ul>
+<li>重点研究文本预处理对实验的影响，使用循环神经网络开展研究</li>
+</ul>
+</li>
+<li>不足之处在于仍然采用统计机器学习方法，未引入端到端的深度学习模型设计思想，可解释性较差</li>
+</ul>
+</li>
+<li>注意力机制<ul>
+<li>增强可解释性<br><img src="/2021/07/25/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/2021-07-20-20-10-20.png"><br><img src="/2021/07/25/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/2021-07-20-20-40-45.png"></li>
+</ul>
+</li>
+</ul>
+<h1 id="拓展思路-1"><a href="#拓展思路-1" class="headerlink" title="拓展思路"></a>拓展思路</h1><ul>
+<li>事件类别数量，事件数量，推文数量仍需扩充，多语种的或其他平台的数据</li>
+<li><em>自动标注</em>的短板，人工标注的繁重</li>
+<li>更复杂的模型设计，更先进的技术应用</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/25/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/25/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/" class="post-title-link" itemprop="url">视频取证</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-25 11:38:19" itemprop="dateCreated datePublished" datetime="2021-07-25T11:38:19+08:00">2021-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 09:27:40" itemprop="dateModified" datetime="2021-09-13T09:27:40+08:00">2021-09-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="图像取证"><a href="#图像取证" class="headerlink" title="图像取证"></a>图像取证</h1><ul>
+<li>二分类任务：是否经过修改</li>
+<li>多分类任务：在上一个任务的基础上区分用何种方式进行伪造，相机识别</li>
+</ul>
+<h1 id="研究现状"><a href="#研究现状" class="headerlink" title="研究现状"></a>研究现状</h1><ul>
+<li>光响应非均匀性<br><img src="/2021/07/25/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/2021-07-20-16-06-02.png"></li>
+<li>隐写分析模型</li>
+</ul>
+<h1 id="视频造假与识别"><a href="#视频造假与识别" class="headerlink" title="视频造假与识别"></a>视频造假与识别</h1><ul>
+<li><p>造假方式</p>
+<ul>
+<li>deepfakes 变分自编码器</li>
+<li>FaceSwap</li>
+<li>Face2Face</li>
+<li>GAN(ProGAN,StyleGAN,CycleGAN)</li>
+</ul>
+</li>
+<li><p>识别方式</p>
+<ul>
+<li>光照估计</li>
+<li>几何估计</li>
+<li>软生物特征模型</li>
+<li>基于脸部地标的检测</li>
+<li>基于CNN网络的检测</li>
+<li>基于眨眼的LRCN模型</li>
+<li>基于频谱的检测</li>
+</ul>
+</li>
+<li><p>检测数据集</p>
+<ul>
+<li>FaceForensics++</li>
+</ul>
+</li>
+</ul>
+<h1 id="变分自编码器-VAE"><a href="#变分自编码器-VAE" class="headerlink" title="变分自编码器(VAE)"></a>变分自编码器(VAE)</h1><ul>
+<li>变换法<br><img src="/2021/07/25/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/2021-07-20-21-24-11.png"></li>
+<li><img src="/2021/07/25/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/2021-07-20-21-30-02.png"></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/25/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/25/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/" class="post-title-link" itemprop="url">群体画像</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-25 11:38:18" itemprop="dateCreated datePublished" datetime="2021-07-25T11:38:18+08:00">2021-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 09:26:55" itemprop="dateModified" datetime="2021-09-13T09:26:55+08:00">2021-09-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="人群画像"><a href="#人群画像" class="headerlink" title="人群画像"></a>人群画像</h1><ul>
+<li><p>群体<br><img src="/2021/07/25/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/2021-07-15-20-29-06.png"></p>
+</li>
+<li><p>社会群体和社会计算之间关联<br><img src="/2021/07/25/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/2021-07-15-20-43-33.png"></p>
+</li>
+<li><p>群体发现(划分算法)</p>
+<h2 id="1-Community-detection"><a href="#1-Community-detection" class="headerlink" title="1.Community detection"></a>1.Community detection</h2><h2 id="2-Social-circles"><a href="#2-Social-circles" class="headerlink" title="2.Social circles"></a>2.Social circles</h2><h2 id="3-共谋群体-聚类"><a href="#3-共谋群体-聚类" class="headerlink" title="3.共谋群体(聚类)"></a>3.共谋群体(聚类)</h2></li>
+</ul>
+<p><img src="/2021/07/25/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/2021-07-16-09-29-13.png"></p>
+<ul>
+<li>公式表示线性回归模型</li>
+</ul>
+<h1 id="群体画像"><a href="#群体画像" class="headerlink" title="群体画像"></a>群体画像</h1><ul>
+<li>群体画像各个维度和用户画像对应</li>
+<li><em>plurality voting</em></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/25/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/25/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/" class="post-title-link" itemprop="url">标题党检测</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-25 11:38:16" itemprop="dateCreated datePublished" datetime="2021-07-25T11:38:16+08:00">2021-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 09:24:40" itemprop="dateModified" datetime="2021-09-13T09:24:40+08:00">2021-09-13</time>
+              </span>
 
           
 
@@ -280,13 +612,13 @@
 <li>用户行为分析</li>
 </ul>
 </li>
-<li><p>基于标题文本特征的方法<br><img src="2021-07-19-14-21-14.png"></p>
+<li><p>基于标题文本特征的方法<br><img src="/2021/07/25/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/2021-07-19-14-21-14.png"></p>
 </li>
-<li><p>基于标题和正文匹配程度的方法<br><img src="2021-07-19-14-39-54.png"></p>
+<li><p>基于标题和正文匹配程度的方法<br><img src="/2021/07/25/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/2021-07-19-14-39-54.png"></p>
 </li>
-<li><p>基于社交网站用户行为的方法<br><img src="2021-07-19-14-44-32.png"></p>
+<li><p>基于社交网站用户行为的方法<br><img src="/2021/07/25/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/2021-07-19-14-44-32.png"></p>
 </li>
-<li><p>总结<br><img src="2021-07-19-14-54-22.png"></p>
+<li><p>总结<br><img src="/2021/07/25/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/2021-07-19-14-54-22.png"></p>
 </li>
 </ul>
 
@@ -308,7 +640,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/27/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -322,7 +654,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/07/27/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2021/07/25/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/" class="post-title-link" itemprop="url">图像语义</a>
         </h2>
 
         <div class="post-meta">
@@ -332,8 +664,15 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-07-27 14:33:36" itemprop="dateCreated datePublished" datetime="2021-07-27T14:33:36+08:00">2021-07-27</time>
+              <time title="Created: 2021-07-25 11:38:15" itemprop="dateCreated datePublished" datetime="2021-07-25T11:38:15+08:00">2021-07-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 09:28:19" itemprop="dateModified" datetime="2021-09-13T09:28:19+08:00">2021-09-13</time>
+              </span>
 
           
 
@@ -346,19 +685,474 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+          <h1 id="场景图自动生成-Neural-Motifs"><a href="#场景图自动生成-Neural-Motifs" class="headerlink" title="场景图自动生成(Neural Motifs)"></a>场景图自动生成(Neural Motifs)</h1><h1 id="scene-Graphs"><a href="#scene-Graphs" class="headerlink" title="scene Graphs"></a><em>scene Graphs</em></h1><p><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/2021-07-20-10-17-07.png"></p>
+<ul>
+<li>三维场景图(牛逼..)</li>
+</ul>
+<h1 id="视频场景识别"><a href="#视频场景识别" class="headerlink" title="视频场景识别"></a>视频场景识别</h1><ul>
+<li>图像序列<ul>
+<li>考虑全局角度的场景运动信息</li>
+<li>引入光流场表示时序上的动态变化</li>
+<li>使用CNN提取每一视频帧的特征，使用统计方法按位进行关键帧特征聚合，采用指标拼接，输入SVM进行分类<em>SA-CNN</em></li>
+</ul>
+</li>
+</ul>
+<h1 id="音频-听觉-场景识别"><a href="#音频-听觉-场景识别" class="headerlink" title="音频(听觉)场景识别"></a>音频(听觉)场景识别</h1><ul>
+<li>CNN同时提取单声道和立体声的音频特征</li>
+<li>提取梅尔频谱倒谱系数，配合隐马尔科夫模型</li>
+</ul>
+<h1 id="短文本场景识别"><a href="#短文本场景识别" class="headerlink" title="短文本场景识别"></a>短文本场景识别</h1><ul>
+<li>朴素贝叶斯+最大熵方法</li>
+<li>LSA挖掘文本语义概念与场景之间的关联关系 </li>
+</ul>
+<h1 id="拓展延伸"><a href="#拓展延伸" class="headerlink" title="拓展延伸"></a>拓展延伸</h1><ul>
+<li><p>挑战：</p>
+<ul>
+<li>大规模数据场景分类，数据的海量增长及类别的不断细分，区分度越来越低，数据类型也更为复杂</li>
+<li>真实场景理解，场景的理解不再是单纯的分类问题，更多的是对内容语义的理解和实时性要求</li>
+</ul>
+</li>
+<li><p>未来：</p>
+<ul>
+<li>提取局部特征：目前的局部特征提取方法大多是提取不同模态的全局信息，没考虑到局部的信息，即各类语义对象</li>
+<li>更复杂的模态融合：捕捉到多种模式之间更复杂的相关性</li>
+</ul>
+</li>
+</ul>
+<h1 id="视频理解"><a href="#视频理解" class="headerlink" title="视频理解"></a>视频理解</h1><ul>
+<li>研究方向<ul>
+<li>视频分类<ul>
+<li>场景分类</li>
+<li>行为识别：对视频中人物行为进行分类 <ul>
+<li>稠密轨迹法<ul>
+<li>稳定性高，可靠性高，速度慢，精度低</li>
+</ul>
+</li>
+<li>双流法<ul>
+<li>精度高，速度慢</li>
+</ul>
+</li>
+<li>三维卷积(C3D,P3D)<ul>
+<li>速度快，精度低于双流法</li>
+</ul>
+</li>
+<li>LSTM+CNN<ul>
+<li>速度慢，精度低</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>目标跟踪</li>
+<li>视频描述<ul>
+<li>传统视频描述</li>
+<li>密集视频描述<ul>
+<li>不足：生成的描述冗余，不连贯，主要集中在如何提高描述的准确性上，很少有研究考虑生成的描述是否足以表示视频中丰富的信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>视频问答</li>
+</ul>
+</li>
+</ul>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+      
+    </div>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/">
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/" class="post-title-link" itemprop="url">图像生成</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-25 11:38:14" itemprop="dateCreated datePublished" datetime="2021-07-25T11:38:14+08:00">2021-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 09:28:02" itemprop="dateModified" datetime="2021-09-13T09:28:02+08:00">2021-09-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="自回归模型"><a href="#自回归模型" class="headerlink" title="自回归模型"></a>自回归模型</h1><ul>
+<li>直接明确的概率建模</li>
+<li><em>PixelRNN</em><ul>
+<li>速度慢</li>
+</ul>
+</li>
+<li><em>PixelCNN</em><ul>
+<li>利用CNN建模上下文信息</li>
+<li>仍然从角落开始产生像素</li>
+<li>使用Mask并行训练，但测试时仍按顺序生成</li>
+</ul>
+</li>
+<li>优点<ul>
+<li>明确计算数据似然</li>
+<li>数据似然可以作为较好的度量方法</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>序列化的生成过程，速度慢</li>
+<li>生成顺序如何定义</li>
+<li>长距离依赖问题</li>
+</ul>
+</li>
+</ul>
+<h1 id="变分自编码器-VAE"><a href="#变分自编码器-VAE" class="headerlink" title="变分自编码器(VAE)"></a>变分自编码器(VAE)</h1><ul>
+<li>编码器压缩数据得到隐特征</li>
+<li>解码器根据隐特征还原数据</li>
+<li>舍弃解码器，将编码器用去特征提取</li>
+<li>disCVAE 拆分</li>
+<li>优点<ul>
+<li>定义了概率密度，有迹可循的生成方法</li>
+<li>后验概率可以作为其他任务的特征使用</li>
+<li>本质上概率图模型，易扩展</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>需要通过变分下届推断，不如自回归模型直接定义的尺度</li>
+<li>利用重构损失优化，生成样本模糊</li>
+</ul>
+</li>
+</ul>
+<h1 id="GAN-生成式对抗网络"><a href="#GAN-生成式对抗网络" class="headerlink" title="GAN(生成式对抗网络)"></a>GAN(生成式对抗网络)</h1><ul>
+<li>不直接对数据的概率分布建模</li>
+<li>通过辨别器度量生成数据与真实数据分布的距离<br><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-09-37-17.png"></li>
+<li><em>CGAN</em>,<em>CGAN with Auxiliary Classifier</em>,<em>SA-GAN</em>,<em>Big-GAN</em>,<em>AttnGAN</em>,<em>Obj-GAN</em>,<em>Story-GAN</em>,<em>SeqAttnGAN</em></li>
+<li>具体模型架构参考视频</li>
+<li>优点<ul>
+<li>博弈形式隐式地度量数据分布的距离</li>
+<li>生成图像质量高</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>训练不稳定，有模态坍塌风险</li>
+<li>无法推断概率</li>
+</ul>
+</li>
+</ul>
+<h1 id="评估指标·"><a href="#评估指标·" class="headerlink" title="评估指标·"></a>评估指标·</h1><p><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-00-59.png"></p>
+<ul>
+<li>P(y|x)图片x的分类概率</li>
+<li>P(y)分类结果的边缘概率<br><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-11.png"></li>
+<li>各类模型特点<br><img src="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2021-07-20-10-04-54.png"></li>
+</ul>
+<h1 id="研究方向"><a href="#研究方向" class="headerlink" title="研究方向"></a>研究方向</h1><ul>
+<li>任务方面<ul>
+<li>交互式图像生成</li>
+<li>故事生成</li>
+<li>视频生成</li>
+<li>3D图像生成</li>
+</ul>
+</li>
+<li>模型本身<ul>
+<li>网络结构研究：<em>Instance Norm</em>,<em>Attentive Norm</em></li>
+<li>GAN的稳定性研究</li>
+<li>先验知识的引入</li>
+<li>更好的信息利用方法</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/" class="post-title-link" itemprop="url">信息可信性</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-25 11:33:34" itemprop="dateCreated datePublished" datetime="2021-07-25T11:33:34+08:00">2021-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 09:28:46" itemprop="dateModified" datetime="2021-09-13T09:28:46+08:00">2021-09-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="谣言检测"><a href="#谣言检测" class="headerlink" title="谣言检测"></a>谣言检测</h1><ul>
+<li><p>相关概念<br><img src="/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/2021-07-16-11-13-49.png"></p>
+</li>
+<li><p>有监督：分类</p>
+<ul>
+<li>静态特征：内容特征，用户特征，其他特征</li>
+<li>动态特征：序列结构建模，树结构建模</li>
+</ul>
+</li>
+<li><p>无监督：概率图</p>
+</li>
+</ul>
+<p><img src="/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/2021-07-16-15-47-52.png"></p>
+<ul>
+<li><p>引入Attention可以不同单词对于谣言判定的权重不同<br><img src="/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/2021-07-16-15-53-54.png"></p>
+</li>
+<li><p>序列结构上下文建模的主要问题：</p>
+<ul>
+<li>上下文模糊：不同推文的隐特征计算，依托的前文和后文的信息应有所区别</li>
+<li>基于RNN构建：无法脱离RNN结构建模，因此存在长期依赖难以学习的问题</li>
+</ul>
+</li>
+</ul>
+<h1 id="谣言抑制"><a href="#谣言抑制" class="headerlink" title="谣言抑制"></a>谣言抑制</h1><ul>
+<li><p>信息传播相关模型：线性阈值模型;传染病模型;SIS模型</p>
+</li>
+<li><p>社区结构：模型OPOAO，DOAM<br><img src="/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/2021-07-16-20-09-08.png"></p>
+</li>
+</ul>
+<p><img src="/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/2021-07-16-20-11-04.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/25/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/25/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/" class="post-title-link" itemprop="url">人格检测_用户画像</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-25 11:33:32" itemprop="dateCreated datePublished" datetime="2021-07-25T11:33:32+08:00">2021-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 09:27:21" itemprop="dateModified" datetime="2021-09-13T09:27:21+08:00">2021-09-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="用户画像"><a href="#用户画像" class="headerlink" title="用户画像"></a>用户画像</h1><ul>
+<li>芝麻信用分的评估</li>
+<li>用户信息标签化，商业分析</li>
+<li>用户属性的标签化框架</li>
+<li><em>Patch Dictionary</em></li>
+<li><em>Meta Learning</em><br><img src="/2021/07/25/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/2021-07-15-17-12-30.png"></li>
+</ul>
+<h1 id="人格检测"><a href="#人格检测" class="headerlink" title="人格检测"></a>人格检测</h1><h2 id="1-基于数据驱动的研究"><a href="#1-基于数据驱动的研究" class="headerlink" title="1. 基于数据驱动的研究"></a>1. 基于数据驱动的研究</h2><p><img src="/2021/07/25/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/2021-07-15-15-41-05.png"></p>
+<ul>
+<li>用户人格识别中，样本量小和分布失衡的问题研究(<em>Tomek Link</em>方法)</li>
+</ul>
+<h2 id="2-基于应用驱动的模型"><a href="#2-基于应用驱动的模型" class="headerlink" title="2. 基于应用驱动的模型"></a>2. 基于应用驱动的模型</h2><p><img src="/2021/07/25/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/2021-07-15-15-52-20.png"></p>
+<p><img src="/2021/07/25/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/2021-07-15-16-13-45.png"> </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://.github.io/2021/07/25/attention/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/25/attention/" class="post-title-link" itemprop="url">Attention</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-25 11:33:06" itemprop="dateCreated datePublished" datetime="2021-07-25T11:33:06+08:00">2021-07-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-09-13 09:29:06" itemprop="dateModified" datetime="2021-09-13T09:29:06+08:00">2021-09-13</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Seq2Seq模型"><a href="#Seq2Seq模型" class="headerlink" title="Seq2Seq模型"></a>Seq2Seq模型</h1><ul>
+<li><p>输入某个序列到模型，转换为另一个序列<br><img src="/2021/07/25/attention/2021-07-17-13-50-48.png"></p>
+</li>
+<li><p>编码器<br><img src="/2021/07/25/attention/2021-07-17-15-24-18.png"></p>
+</li>
+<li><p>解码器<br><img src="/2021/07/25/attention/2021-07-17-14-32-01.png"></p>
+</li>
+<li><p>时间序列展开</p>
+</li>
+</ul>
+<p><img src="/2021/07/25/attention/2021-07-17-14-50-34.png"></p>
+<ul>
+<li>EOC 初始输入</li>
+</ul>
+<h1 id="Attention机制"><a href="#Attention机制" class="headerlink" title="Attention机制"></a>Attention机制</h1><p><img src="/2021/07/25/attention/2021-07-17-14-55-50.png"></p>
+<p><img src="/2021/07/25/attention/2021-07-17-15-40-44.png"></p>
+<p><img src="/2021/07/25/attention/2021-07-17-16-23-22.png"></p>
+<p><img src="/2021/07/25/attention/2021-07-17-16-27-03.png"></p>
 
       
     </div>
@@ -376,6 +1170,9 @@
 
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -440,7 +1237,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
