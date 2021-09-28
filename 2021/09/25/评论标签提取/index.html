@@ -20,22 +20,20 @@
     var CONFIG = {"hostname":"zxzhou9.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="研究概述  模型角度： 监督方法(需要标签数据): classification techniques 从用户属性中提取特征 训练分类用以预测用户身份对   embedding techniques 获取用户表示后进行身份关联     半监督方法(需要标签数据) 在模型学习时同时考虑有标签与无标签的用户身份对   无监督方法(无需标签数据) 已有工作较少      跨网络社区发现 常见的社区发现方">
+  <meta name="description" content="评论文本的数据预处理对评论进行表示层的预处理，将评论从纯自然的中文形式，转换为模型适用的词、字符或向量形式。 清洗噪声之后，下一环节为中文分词  词义消歧 对于一词多义问题：采用Word2Vec中的most_similar函数对相似词进行替换处理，将多义词替换为语义层面相近的无歧义词。 对于指代消解问题：通过VSM(向量空间模型)和余弦相似度等进行处理。   预定义词表  针对罕见的地名或者演出形">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨社交网络">
-<meta property="og:url" content="https://zxzhou9.github.io/2021/07/25/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:title" content="评论标签提取">
+<meta property="og:url" content="https://zxzhou9.github.io/2021/09/25/%E8%AF%84%E8%AE%BA%E6%A0%87%E7%AD%BE%E6%8F%90%E5%8F%96/index.html">
 <meta property="og:site_name" content="zzZzx&#39;s Blog">
-<meta property="og:description" content="研究概述  模型角度： 监督方法(需要标签数据): classification techniques 从用户属性中提取特征 训练分类用以预测用户身份对   embedding techniques 获取用户表示后进行身份关联     半监督方法(需要标签数据) 在模型学习时同时考虑有标签与无标签的用户身份对   无监督方法(无需标签数据) 已有工作较少      跨网络社区发现 常见的社区发现方">
+<meta property="og:description" content="评论文本的数据预处理对评论进行表示层的预处理，将评论从纯自然的中文形式，转换为模型适用的词、字符或向量形式。 清洗噪声之后，下一环节为中文分词  词义消歧 对于一词多义问题：采用Word2Vec中的most_similar函数对相似词进行替换处理，将多义词替换为语义层面相近的无歧义词。 对于指代消解问题：通过VSM(向量空间模型)和余弦相似度等进行处理。   预定义词表  针对罕见的地名或者演出形">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zxzhou9.github.io/images/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/1.png">
-<meta property="article:published_time" content="2021-07-25T03:38:22.038Z">
-<meta property="article:modified_time" content="2021-09-13T06:09:20.427Z">
+<meta property="article:published_time" content="2021-09-25T05:22:35.670Z">
+<meta property="article:modified_time" content="2021-09-28T07:56:33.302Z">
 <meta property="article:author" content="zx zhou">
 <meta property="article:tag" content="CPSS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zxzhou9.github.io/images/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/1.png">
 
-<link rel="canonical" href="https://zxzhou9.github.io/2021/07/25/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/">
+<link rel="canonical" href="https://zxzhou9.github.io/2021/09/25/%E8%AF%84%E8%AE%BA%E6%A0%87%E7%AD%BE%E6%8F%90%E5%8F%96/">
 
 
 <script id="page-configurations">
@@ -48,7 +46,7 @@
   };
 </script>
 
-  <title>跨社交网络 | zzZzx's Blog</title>
+  <title>评论标签提取 | zzZzx's Blog</title>
   
 
 
@@ -189,7 +187,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/07/25/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/">
+    <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/09/25/%E8%AF%84%E8%AE%BA%E6%A0%87%E7%AD%BE%E6%8F%90%E5%8F%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -202,7 +200,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          跨社交网络
+          评论标签提取
         </h1>
 
         <div class="post-meta">
@@ -212,14 +210,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-07-25 11:38:22" itemprop="dateCreated datePublished" datetime="2021-07-25T11:38:22+08:00">2021-07-25</time>
+              <time title="创建时间：2021-09-25 13:22:35" itemprop="dateCreated datePublished" datetime="2021-09-25T13:22:35+08:00">2021-09-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-13 14:09:20" itemprop="dateModified" datetime="2021-09-13T14:09:20+08:00">2021-09-13</time>
+                <time title="修改时间：2021-09-28 15:56:33" itemprop="dateModified" datetime="2021-09-28T15:56:33+08:00">2021-09-28</time>
               </span>
 
           
@@ -233,39 +231,115 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="研究概述"><a href="#研究概述" class="headerlink" title="研究概述"></a>研究概述</h1><p><img src="/images/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/1.png" alt="1"></p>
+        <h1 id="评论文本的数据预处理"><a href="#评论文本的数据预处理" class="headerlink" title="评论文本的数据预处理"></a>评论文本的数据预处理</h1><p>对评论进行表示层的预处理，将评论从纯自然的中文形式，转换为模型适用的词、字符或向量形式。</p>
+<p>清洗噪声之后，下一环节为中文分词</p>
 <ul>
-<li>模型角度：<ul>
-<li>监督方法(需要标签数据):<ul>
-<li><em>classification techniques</em><ul>
-<li>从用户属性中提取特征</li>
-<li>训练分类用以预测用户身份对</li>
+<li>词义消歧<ol>
+<li>对于<em>一词多义</em>问题：采用Word2Vec中的most_similar函数对相似词进行替换处理，将多义词替换为语义层面相近的无歧义词。</li>
+<li>对于<em>指代消解</em>问题：通过VSM(向量空间模型)和余弦相似度等进行处理。</li>
+</ol>
+</li>
+<li>预定义词表</li>
+</ul>
+<p>针对罕见的地名或者演出形式，在分词过程中容易被拆分。</p>
+<ul>
+<li>未登录词</li>
+</ul>
+<p>指在已有全量评论语料中未出现的词，采用统一指代符号进行替换，解决词向量缺失问题。</p>
+<ul>
+<li>词性标注</li>
+</ul>
+<p>Jieba分词</p>
+<ul>
+<li>命名实体识别</li>
+</ul>
+<p>用在预定义词表的收集和确定上</p>
+<ul>
+<li>长句切分</li>
+</ul>
+<p>用于神经网络模型训练过程，删除“故事情节”部分，去标点符号，用空格代替</p>
+<p><em>停用词</em></p>
+<h3 id="功能词：表示指代或者功能-如：这；那里；在；的"><a href="#功能词：表示指代或者功能-如：这；那里；在；的" class="headerlink" title="功能词：表示指代或者功能 如：这；那里；在；的"></a>功能词：表示指代或者功能 如：这；那里；在；的</h3><h3 id="词汇词：如：想要；趁着；果然；什么"><a href="#词汇词：如：想要；趁着；果然；什么" class="headerlink" title="词汇词：如：想要；趁着；果然；什么"></a>词汇词：如：想要；趁着；果然；什么</h3><ul>
+<li>语义层面的处理</li>
+</ul>
+<ol>
+<li>Word2Vec 实质采用CBOW和Skip-Gram来训练词向量，CBOW输入为上下文词向量，输出为当前词向量。Skip-Gram输入是当前词向量，输出时上下文词向量，再通过霍夫曼编码以及一些列改进Softmax函数或者Negative Sampling的随机负采样来生成最终的词向量。  优点是训练速度快</li>
+<li>GloVe考虑了词的共现情况，更能体现词义，进一步精准表示句子的语义</li>
+<li>随机初始化词 随机一个<em>d</em>维向量</li>
+</ol>
+<h1 id="无监督的标签提取方法"><a href="#无监督的标签提取方法" class="headerlink" title="无监督的标签提取方法"></a>无监督的标签提取方法</h1><ul>
+<li><p>广泛用于文章主题提取的LDA、基于TF-IDF的各类变种算法、基于统计机器翻译的新兴方法论</p>
+</li>
+<li><p>评论特点：随意性强，更新快，无规律</p>
+</li>
+<li><p>无法通过预先训练大量预料来对后续评论持续保持高效的抽取效果</p>
+</li>
+<li><p>TextRank作为主要的标签提取算法</p>
+<p>​    <em>TextRank</em>是基于图网络的排序算法，将文本内容拆分成若干单元，每个单元由句子或单词组成，据此建立一个有向有权图【重要度得分公式】</p>
+</li>
+</ul>
+<h1 id="基于深度学习的标签提取方法"><a href="#基于深度学习的标签提取方法" class="headerlink" title="基于深度学习的标签提取方法"></a>基于深度学习的标签提取方法</h1><ul>
+<li>端到端的处理方式，极大地缩减了原来在特征工程及特征选择时间时的时间成本</li>
+<li>CNN是一种有监督学习的神经网络方法</li>
+<li>数据处理<ul>
+<li>利用CNN对评论进行多分类，输入将被格式化为<em>文本</em>和<em>标注</em>两个文件，对应每一条评论和每一条评论的标签</li>
+<li>评论是经过分词和去停用词处理过后的评论文本</li>
 </ul>
 </li>
-<li><em>embedding techniques</em><ul>
-<li>获取用户表示后进行身份关联</li>
+<li>数据标注<ul>
+<li>部分无法涌过关键词提取进行快速标注的数据，需要人工进行标注</li>
+</ul>
+</li>
+<li>模型训练<ul>
+<li>将标签看成多分类问题， 即将评论进行端到端的计算，输出为N个标签的概率，具体形式为N维向量，每一维度值为标签值及其对应的概率值，且最终会通过程序对N维向量进行排序，取TopK-作为最终输出的评论标签。</li>
+</ul>
+</li>
+<li>将CNN的卷积操作当作N-Gram语言模型使用<pre><code>1. 每一层卷积操作之后，加一层MaxPooling，对每一层的特征进行择优取舍，增加特征的表达能力
+ 2. 将5层卷积+池化的结果进行基于concat的merge操作。Merge函数核心作用是对输出进行concat拼接，使得多层抽象出的特征向量可以组合成一个新的作为下一层的输入。
+ 3. 在下一层加入dropout，对经过5次卷积得到的拼接特征向量，进行不同程度的取舍，增加模型的泛化能力。
+ 4. 将模型输出通过Flatten函数打平，方便对卷积层出来的特征向量进行全连接操作。
+</code></pre>
+</li>
+<li>模型优化<ul>
+<li>单一标签模型Top5准确率比较低</li>
+<li>考虑多模型融合的方式，将基于<strong>不同长度</strong>的N-Gram的模型分别训练，对最终的输出进行人工规则的方式进行错误纠正</li>
+<li>强召回被标签模型忽略的标签，丢弃标签模型判错的标签</li>
+<li>对TopK中K的选择，采用了K-means的方法，将N维标签概率值向量，进行K分类，实现动态TopK的标签提取</li>
+<li>对于评论长度过短，但提取出的标签过多的情况，只取前2个标签作为最终标签输出。</li>
 </ul>
 </li>
 </ul>
+<h1 id="标签情感分析"><a href="#标签情感分析" class="headerlink" title="标签情感分析"></a>标签情感分析</h1><ul>
+<li><p>实时性事件即与客观环境相关性不强，但与主体所处时间点的事件性内容强相关</p>
 </li>
-<li>半监督方法(需要标签数据)<ul>
-<li>在模型学习时同时考虑有标签与无标签的用户身份对</li>
-</ul>
+<li><p>对长短不一的内容抽取关键情感信息，从算法层面说，这类多标签情感信息重叠的情况可以归结为情感分析中的多标签正负样本杂糅的问题。</p>
 </li>
-<li>无监督方法(无需标签数据)<ul>
-<li>已有工作较少</li>
-</ul>
+<li><p>正负样本不均衡问题</p>
 </li>
-</ul>
+<li><p>TextCNN（<strong>解决绝大多数二分类问题</strong>）</p>
+<ol>
+<li>将完整评论用词向量表示</li>
+<li>通过中文切词和词嵌入将完整评论转化为矩阵（具体长度会根据不同训练语料库而定，一般选定最大长度或平均长度）</li>
+<li>将矩阵经过卷积核大小为2，3，4的三层卷积操作，对评论进行语义级别的特征抽取（根据评论的长度调整卷积核的数目）</li>
+<li>池化操作，降维，通过拼接的方式，将特征向量拼接成新的特征向量</li>
+<li>全连接和Softmax函数对模型进行输出，标签的总分类数即为最后Softmax的输出向量维度值</li>
+</ol>
 </li>
-</ul>
-<h1 id="跨网络社区发现"><a href="#跨网络社区发现" class="headerlink" title="跨网络社区发现"></a>跨网络社区发现</h1><ul>
-<li>常见的社区发现方法<ul>
-<li>基于贝叶斯概率图模型的主题模型</li>
-<li>基于非负矩阵分解的模型</li>
-</ul>
+<li><p>TextRNN</p>
+<ol>
+<li>弥补了卷积神经网络中卷积核大小固定，导致卷积神经网络无法抽取到与当前词距离更长的词信息表达</li>
+<li>更好地表达文本或语句上下文信息</li>
+<li>将表示层词向量作为双向LSTM的输入，将输出进行拼接，进一步增加全连接和Softmax，最后得出概率值</li>
+<li>双向LSTM结构，是将输入词向量的最后一维对应的输出直接作为预测分类的基准，节省训练时间</li>
+</ol>
 </li>
-<li>深度学习，能发现高级别潜在属性，</li>
+<li><p>CRNN</p>
+<ol>
+<li>CNN做文本特征抽取，RNN用于后续基于全局序列的情感分类</li>
+<li>实现多卷积核的2D卷积操作，卷积后对输出进行非线性变换，采用ReLu函数，将卷积层输出的特征图压缩到隐变量h中，在maxpool操作后，仍然保持非线性特性，能够作为下一步lstm_cell的输入</li>
+<li>在三分类和四分类问题上效果有显著提升</li>
+</ol>
+</li>
 </ul>
 
     </div>
@@ -286,13 +360,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/07/25/%E8%AF%9D%E9%A2%98%E5%8F%91%E7%8E%B0/" rel="prev" title="话题发现">
-      <i class="fa fa-chevron-left"></i> 话题发现
+    <a href="/2021/09/12/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/" rel="prev" title="文本分类">
+      <i class="fa fa-chevron-left"></i> 文本分类
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/09/12/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/" rel="next" title="文本分类">
-      文本分类 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -351,7 +422,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">研究概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B7%A8%E7%BD%91%E7%BB%9C%E7%A4%BE%E5%8C%BA%E5%8F%91%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">跨网络社区发现</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%84%E8%AE%BA%E6%96%87%E6%9C%AC%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">1.</span> <span class="nav-text">评论文本的数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%9F%E8%83%BD%E8%AF%8D%EF%BC%9A%E8%A1%A8%E7%A4%BA%E6%8C%87%E4%BB%A3%E6%88%96%E8%80%85%E5%8A%9F%E8%83%BD-%E5%A6%82%EF%BC%9A%E8%BF%99%EF%BC%9B%E9%82%A3%E9%87%8C%EF%BC%9B%E5%9C%A8%EF%BC%9B%E7%9A%84"><span class="nav-number">1.0.1.</span> <span class="nav-text">功能词：表示指代或者功能 如：这；那里；在；的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%8D%E6%B1%87%E8%AF%8D%EF%BC%9A%E5%A6%82%EF%BC%9A%E6%83%B3%E8%A6%81%EF%BC%9B%E8%B6%81%E7%9D%80%EF%BC%9B%E6%9E%9C%E7%84%B6%EF%BC%9B%E4%BB%80%E4%B9%88"><span class="nav-number">1.0.2.</span> <span class="nav-text">词汇词：如：想要；趁着；果然；什么</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E7%9A%84%E6%A0%87%E7%AD%BE%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">无监督的标签提取方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%A0%87%E7%AD%BE%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">基于深度学习的标签提取方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90"><span class="nav-number">4.</span> <span class="nav-text">标签情感分析</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
