@@ -208,7 +208,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-10-17 15:19:16 / 修改时间：16:34:36" itemprop="dateCreated datePublished" datetime="2021-10-17T15:19:16+08:00">2021-10-17</time>
+              <time title="创建时间：2021-10-17 15:19:16 / 修改时间：16:37:30" itemprop="dateCreated datePublished" datetime="2021-10-17T15:19:16+08:00">2021-10-17</time>
             </span>
 
           
@@ -234,8 +234,10 @@
 </ol>
 <p><img src="/images/Swin_Transformer/1.png" alt="1"></p>
 <ol>
-<li>架构和CNN架构非常类似，构建了4个stage，每个stage中都是类似的重复单元</li>
-<li>和ViT类似，通过patch partition将输入图片划分为不重合的patch集合，其中每个patch尺寸为4<em>4，每个patch的特征维度就变为4 * 4 * 3，patch块的数量为H/4 * W/4；stage1部分，先通过一个linear embedding将输入划分后的patch特征维度变成C，然后送入Swin Transformer Block；stage2-stage4操作相同。先通过一个</em>patch merging*，将输入按照2 * 2的相邻patch合并。</li>
+<li>架构和CNN架构非常类似，构建了4个stage，每个stage中都是类似的重复单元<ol>
+<li>和ViT类似，通过patch partition将输入图片划分为不重合的patch集合，其中每个patch尺寸为4X4，每个patch的特征维度就变为4X4X3，patch块的数量为H/4 X W/4；stage1部分，先通过一个linear embedding将输入划分后的patch特征维度变成C，然后送入Swin Transformer Block；stage2-stage4操作相同。先通过一个<em>patch merging</em>，将输入按照2X2的相邻patch合并。</li>
+</ol>
+</li>
 <li>划分patch的方式和ViT一样，先确定每个patch的大小，计算确定patch数量。随着网络深度的加深，patch数量会逐渐减少，并且每个patch的感知范围会扩大（ViT不变），能够适应视觉任务的多尺度。</li>
 <li>进一步引入shifted window partition来解决不同window的信息交流问题</li>
 </ol>
