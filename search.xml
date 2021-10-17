@@ -751,4 +751,29 @@
         <tag>CPSS</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Swin Transformer</title>
+    <url>/2021/10/17/Swin_Transformer/</url>
+    <content><![CDATA[<h2 id="Transformer从NLP迁移到CV上没有表现出特别好的效果的原因有以下两点"><a href="#Transformer从NLP迁移到CV上没有表现出特别好的效果的原因有以下两点" class="headerlink" title="Transformer从NLP迁移到CV上没有表现出特别好的效果的原因有以下两点"></a>Transformer从NLP迁移到CV上没有表现出特别好的效果的原因有以下两点</h2><ol>
+<li>领域涉及的scale不同，NLP的scale是标准固定的，CV的scale变化范围很大</li>
+<li>CV比NLP需要更大的分辨率，而且CV中使用Transformer的计算复杂度是图像尺寸的平方，会导致计算了过于庞大</li>
+</ol>
+<h2 id="相比于ViT，Swin-Transformer做出了一下改进"><a href="#相比于ViT，Swin-Transformer做出了一下改进" class="headerlink" title="相比于ViT，Swin Transformer做出了一下改进"></a>相比于ViT，Swin Transformer做出了一下改进</h2><ol>
+<li>引入CNN中常用的层次化构建方式构建层次化Transformer</li>
+<li>引入locality思想，对无重合的windows区域内进行self-attention计算</li>
+<li>计算复杂度大幅度降低，具有输入图像大小线性计算复杂度</li>
+<li>Swin Transformer随着深度加深，逐渐合并图像块来构建层次化Transformer，可以作为通用的视觉骨干网络应用于<em>图像分类，目标检测，语义分割</em>等任务</li>
+</ol>
+<p><img src="/images/Swin_Transformer/1.png" alt="1"></p>
+<ol>
+<li>架构和CNN架构非常类似，构建了4个stage，每个stage中都是类似的重复单元</li>
+<li>和ViT类似，通过patch partition将输入图片划分为不重合的patch集合，其中每个patch尺寸为4<em>4，每个patch的特征维度就变为4 * 4 * 3，patch块的数量为H/4 * W/4；stage1部分，先通过一个linear embedding将输入划分后的patch特征维度变成C，然后送入Swin Transformer Block；stage2-stage4操作相同。先通过一个</em>patch merging*，将输入按照2 * 2的相邻patch合并。</li>
+<li>划分patch的方式和ViT一样，先确定每个patch的大小，计算确定patch数量。随着网络深度的加深，patch数量会逐渐减少，并且每个patch的感知范围会扩大（ViT不变），能够适应视觉任务的多尺度。</li>
+<li>进一步引入shifted window partition来解决不同window的信息交流问题</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
 </search>

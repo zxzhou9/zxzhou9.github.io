@@ -183,6 +183,81 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/10/17/Swin_Transformer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="保持清醒">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/17/Swin_Transformer/" class="post-title-link" itemprop="url">Swin Transformer</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-10-17 15:19:16 / 修改时间：16:34:36" itemprop="dateCreated datePublished" datetime="2021-10-17T15:19:16+08:00">2021-10-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Transformer从NLP迁移到CV上没有表现出特别好的效果的原因有以下两点"><a href="#Transformer从NLP迁移到CV上没有表现出特别好的效果的原因有以下两点" class="headerlink" title="Transformer从NLP迁移到CV上没有表现出特别好的效果的原因有以下两点"></a>Transformer从NLP迁移到CV上没有表现出特别好的效果的原因有以下两点</h2><ol>
+<li>领域涉及的scale不同，NLP的scale是标准固定的，CV的scale变化范围很大</li>
+<li>CV比NLP需要更大的分辨率，而且CV中使用Transformer的计算复杂度是图像尺寸的平方，会导致计算了过于庞大</li>
+</ol>
+<h2 id="相比于ViT，Swin-Transformer做出了一下改进"><a href="#相比于ViT，Swin-Transformer做出了一下改进" class="headerlink" title="相比于ViT，Swin Transformer做出了一下改进"></a>相比于ViT，Swin Transformer做出了一下改进</h2><ol>
+<li>引入CNN中常用的层次化构建方式构建层次化Transformer</li>
+<li>引入locality思想，对无重合的windows区域内进行self-attention计算</li>
+<li>计算复杂度大幅度降低，具有输入图像大小线性计算复杂度</li>
+<li>Swin Transformer随着深度加深，逐渐合并图像块来构建层次化Transformer，可以作为通用的视觉骨干网络应用于<em>图像分类，目标检测，语义分割</em>等任务</li>
+</ol>
+<p><img src="/images/Swin_Transformer/1.png" alt="1"></p>
+<ol>
+<li>架构和CNN架构非常类似，构建了4个stage，每个stage中都是类似的重复单元</li>
+<li>和ViT类似，通过patch partition将输入图片划分为不重合的patch集合，其中每个patch尺寸为4<em>4，每个patch的特征维度就变为4 * 4 * 3，patch块的数量为H/4 * W/4；stage1部分，先通过一个linear embedding将输入划分后的patch特征维度变成C，然后送入Swin Transformer Block；stage2-stage4操作相同。先通过一个</em>patch merging*，将输入按照2 * 2的相邻patch合并。</li>
+<li>划分patch的方式和ViT一样，先确定每个patch的大小，计算确定patch数量。随着网络深度的加深，patch数量会逐渐减少，并且每个patch的感知范围会扩大（ViT不变），能够适应视觉任务的多尺度。</li>
+<li>进一步引入shifted window partition来解决不同window的信息交流问题</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/09/25/%E8%AF%84%E8%AE%BA%E6%A0%87%E7%AD%BE%E6%8F%90%E5%8F%96/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1254,100 +1329,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zx zhou">
-      <meta itemprop="description" content="保持清醒">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zzZzx's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/" class="post-title-link" itemprop="url">信息可信性</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-25 11:33:34" itemprop="dateCreated datePublished" datetime="2021-07-25T11:33:34+08:00">2021-07-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-13 14:10:03" itemprop="dateModified" datetime="2021-09-13T14:10:03+08:00">2021-09-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="谣言检测"><a href="#谣言检测" class="headerlink" title="谣言检测"></a>谣言检测</h1><ul>
-<li><p>相关概念<br><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/1.png" alt="1"></p>
-</li>
-<li><p>有监督：分类</p>
-<ul>
-<li>静态特征：内容特征，用户特征，其他特征</li>
-<li>动态特征：序列结构建模，树结构建模</li>
-</ul>
-</li>
-<li><p>无监督：概率图</p>
-</li>
-</ul>
-<p><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/2.png" alt="2"></p>
-<ul>
-<li><p>引入Attention可以不同单词对于谣言判定的权重不同<br><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/3.png" alt="3"></p>
-</li>
-<li><p>序列结构上下文建模的主要问题：</p>
-<ul>
-<li>上下文模糊：不同推文的隐特征计算，依托的前文和后文的信息应有所区别</li>
-<li>基于RNN构建：无法脱离RNN结构建模，因此存在长期依赖难以学习的问题</li>
-</ul>
-</li>
-</ul>
-<h1 id="谣言抑制"><a href="#谣言抑制" class="headerlink" title="谣言抑制"></a>谣言抑制</h1><ul>
-<li><p>信息传播相关模型：线性阈值模型;传染病模型;SIS模型</p>
-</li>
-<li><p>社区结构：模型OPOAO，DOAM<br><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/4.png" alt="4"></p>
-</li>
-</ul>
-<p><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/5.png" alt="5"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1418,7 +1399,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
