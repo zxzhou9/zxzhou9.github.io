@@ -183,6 +183,175 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/10/24/%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="保持清醒">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/10/24/%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">CCF X BDCI 产品观点评论比赛</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-10-24 14:51:21 / 修改时间：17:07:44" itemprop="dateCreated datePublished" datetime="2021-10-24T14:51:21+08:00">2021-10-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="CCF-X-BDCI-产品观点评论比赛"><a href="#CCF-X-BDCI-产品观点评论比赛" class="headerlink" title="CCF X BDCI 产品观点评论比赛"></a>CCF X BDCI 产品观点评论比赛</h1><h2 id="BERT模型"><a href="#BERT模型" class="headerlink" title="BERT模型"></a>BERT模型</h2><p>BERT模型主要是针对word2vec等模型的不足，在之前的预训练模型（包括word2vec，ELMo等）都会生成词向量，这种类别的预训练模型属于domain transfer。而近一两年提出的ULMFiT，GPT，BERT等都属于模型迁移。BERT 模型是将预训练模型和下游任务模型结合在一起的，核心目的就是：是把下游具体NLP任务的活逐渐移到预训练产生词向量上。</p>
+<h2 id="主要亮点"><a href="#主要亮点" class="headerlink" title="主要亮点"></a>主要亮点</h2><ol>
+<li><p>双向Transformers</p>
+<p><img src="/images/%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/%E6%88%AA%E5%B1%8F2021-10-24%20%E4%B8%8B%E5%8D%882.48.45.png" alt="截屏2021-10-24 下午2.48.45"></p>
+</li>
+<li><p>句子级别的应用</p>
+<p>通过使用segment同时考虑了句子级别的预测</p>
+</li>
+<li><p>根据不同的任务，按照BERT的输入要求输入我们的数据，获取输出，在输出层加一层全连接层。a，b都是sentence级别的：文本分类，关系抽取，c，d是tokens级别的：命名实体识别，知识问答等</p>
+<center>
+  
+</center>
+
+<p><img src="/images/%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/%E6%88%AA%E5%B1%8F2021-10-24%20%E4%B8%8B%E5%8D%883.01.05.png" alt="截屏2021-10-24 下午3.01.05"></p>
+</li>
+</ol>
+<h2 id="代码解读"><a href="#代码解读" class="headerlink" title="代码解读"></a>代码解读</h2><ol>
+<li><p>预训练部分：run_pretraining.py</p>
+</li>
+<li><p>Fine-tune部分：</p>
+<p>run_classifier.py：适用的任务为分类任务，如CoLA，MRPC，MultiNLI等</p>
+<p>run_squad.py：适用的是阅读理解任务，如squad2.0和squad1.1</p>
+</li>
+<li><p>modeling.py：模型定义</p>
+<p>optimization.py：优化器</p>
+<p>tokenization.py：BasicTokenizer对原始句子内容的解析，进行unicode转换、标点符号分割、中文字符分割、去除重音符号等操作，最后返回关于词的数组，中文是字的数组WordpieceTokenizer的目的是将合成词分解成类似词根一样的词片。防止因为词的过于生僻没有被收录进词典最后只能以[UNK]代替的局面。FullTokenizer对一个文本段进行以上两种解析，最后返回词（字）的数组，同时提供token到id的索引以及id到token的索引。token可以理解为文本段处理过后的最小单元</p>
+</li>
+<li><p>需要修改的部分</p>
+<ul>
+<li><p>run_classifier.py</p>
+<ul>
+<li><p>BERT主要分为两部分，一个是训练语言模型的预训练部分，另一个是训练具体任务的fine-tune部分，在自己的数据集上进行fine-tune</p>
+</li>
+<li><p>InputExample类</p>
+<p>主要定义了一些数据处理后要生成的字段名：</p>
+<ul>
+<li>guid：id号，一般将数据处理成train、dev、test数据集，定义方式可以是相应的数据集+行号（句子）</li>
+<li>text_a：当前的句子</li>
+<li>text_b：另一个句子</li>
+<li>有些任务需要两个句子，如果任务中没有的话，可以讲text_b设为None</li>
+<li>label：标签</li>
+</ul>
+</li>
+<li><p>InputFeatures类</p>
+<ul>
+<li>定义了bert的输入格式，上面的格式是需要我们将原始数据处理成的格式，但并不是bert使用的最终格式，而且还会通过一些代码将InputExample转化为InputFeatures，这才是bert最终使用的数据格式，根据自己的需要可以定义一些字段作为中间辅助字段，但bert最基本的输入字段需要input_ids，input_mask和segment_ids这三个字段，label_id是计算loss时候用到的<ul>
+<li>input_ids，segment_ids：分别对应单词id和句子(上下句标示)</li>
+<li>input_ids、segment_ids分别代表token、segment</li>
+<li>input_mask：记录的是填充信息</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>DataProcessor</p>
+<ul>
+<li>数据预处理的基类</li>
+<li>tokenization中的convert_to_unicode就是将文本转化为utf-8编码</li>
+<li>数据预处理过程，需要我们根据自己的数据定义，但是并不是bert使用的最终样子，还得经过一系列过程才能变成其能处理的数据格式：<ul>
+<li>convert_single_example：返回一个InputFeatures类</li>
+<li>file_based_convert_example_to_features</li>
+<li>file_based_input_fn_builder</li>
+<li>truncate_seq_pair</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>convert_single_example</p>
+<ul>
+<li>bert输入<img src="/images/%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/%E6%88%AA%E5%B1%8F2021-10-24%20%E4%B8%8B%E5%8D%884.21.36.png" alt="截屏2021-10-24 下午4.21.36"></li>
+<li>input_ids：记录的是使用FullTokenizer类convert_tokens_to_ids方法将tokens转化成单个字的id</li>
+<li>segment_ids：句子级别（上下句）的标签</li>
+<li>input_mask：和最大长度有关，假设我们定义句子的最大长度是120，当前句子长度是100，那么input_mask前100个元素都是1，其余20个就是0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>run_squad.py</p>
+</li>
+</ul>
+</li>
+<li><p>模型部分</p>
+<ul>
+<li><p>create_model</p>
+<ul>
+<li>bert模型的输入：input_ids，input_mask，segment_ids</li>
+<li>bert模型的输出：<ul>
+<li>model.get_sequence_output（）：第一种输出结果是[batch_size, seq_length, embedding_size]</li>
+<li>model.get_pooled_output()：第二种输出结果是[batch_size, embedding_size]</li>
+<li>第二种结果是第一种结果在第二个维度上进行了池化，第一种得到的是tokens级别的结果，第二种是句子级别的</li>
+<li><strong>使用bert进行任务时，主要变的就是这个部分</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>model_fn_builder</p>
+<p>首先调用create_model得到total_loss、 per_example_loss、logits、 probabilities等，然后针对不同的状态返回不同的结果（output_spec）:</p>
+<ul>
+<li>如果是train，返回loss、train_op</li>
+<li>如果是dev，返回评价指标，比如accuracy</li>
+<li>如果是test，返回预测结果</li>
+<li>如果想看其他指标，可以在这边修改，因为使用了estimator API，使得其必须返回一个operation</li>
+<li>F1-score定义：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jiangxinyang/p/10341392.html">https://www.cnblogs.com/jiangxinyang/p/10341392.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>main函数</p>
+<p>定义预处理器，把自己定义的预处理包含进去，处理完使用tf.contrib.tpu.TPUEstimator定义模型，最后根据不同模式运行estimator.train，estimator.evaluate，estimator.predict</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在进行任务时，复制BERT的run_classifier.py，修改核心内容作为自己的run函数，包括继承DataProcessor，定义一个自己的数据预处理类，在create_model中，定义自己的具体下游工作</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/10/17/Swin_Transformer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1188,149 +1357,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zx zhou">
-      <meta itemprop="description" content="保持清醒">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zzZzx's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/" class="post-title-link" itemprop="url">图像生成</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-25 11:38:14" itemprop="dateCreated datePublished" datetime="2021-07-25T11:38:14+08:00">2021-07-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-13 14:09:52" itemprop="dateModified" datetime="2021-09-13T14:09:52+08:00">2021-09-13</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="自回归模型"><a href="#自回归模型" class="headerlink" title="自回归模型"></a>自回归模型</h1><ul>
-<li>直接明确的概率建模</li>
-<li><em>PixelRNN</em><ul>
-<li>速度慢</li>
-</ul>
-</li>
-<li><em>PixelCNN</em><ul>
-<li>利用CNN建模上下文信息</li>
-<li>仍然从角落开始产生像素</li>
-<li>使用Mask并行训练，但测试时仍按顺序生成</li>
-</ul>
-</li>
-<li>优点<ul>
-<li>明确计算数据似然</li>
-<li>数据似然可以作为较好的度量方法</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>序列化的生成过程，速度慢</li>
-<li>生成顺序如何定义</li>
-<li>长距离依赖问题</li>
-</ul>
-</li>
-</ul>
-<h1 id="变分自编码器-VAE"><a href="#变分自编码器-VAE" class="headerlink" title="变分自编码器(VAE)"></a>变分自编码器(VAE)</h1><ul>
-<li>编码器压缩数据得到隐特征</li>
-<li>解码器根据隐特征还原数据</li>
-<li>舍弃解码器，将编码器用去特征提取</li>
-<li>disCVAE 拆分</li>
-<li>优点<ul>
-<li>定义了概率密度，有迹可循的生成方法</li>
-<li>后验概率可以作为其他任务的特征使用</li>
-<li>本质上概率图模型，易扩展</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>需要通过变分下届推断，不如自回归模型直接定义的尺度</li>
-<li>利用重构损失优化，生成样本模糊</li>
-</ul>
-</li>
-</ul>
-<h1 id="GAN-生成式对抗网络"><a href="#GAN-生成式对抗网络" class="headerlink" title="GAN(生成式对抗网络)"></a>GAN(生成式对抗网络)</h1><ul>
-<li>不直接对数据的概率分布建模</li>
-<li>通过辨别器度量生成数据与真实数据分布的距离<br><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/1.png" alt="1"></li>
-<li><em>CGAN</em>,<em>CGAN with Auxiliary Classifier</em>,<em>SA-GAN</em>,<em>Big-GAN</em>,<em>AttnGAN</em>,<em>Obj-GAN</em>,<em>Story-GAN</em>,<em>SeqAttnGAN</em></li>
-<li>具体模型架构参考视频</li>
-<li>优点<ul>
-<li>博弈形式隐式地度量数据分布的距离</li>
-<li>生成图像质量高</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>训练不稳定，有模态坍塌风险</li>
-<li>无法推断概率</li>
-</ul>
-</li>
-</ul>
-<h1 id="评估指标·"><a href="#评估指标·" class="headerlink" title="评估指标·"></a>评估指标·</h1><p><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2.png" alt="2"></p>
-<ul>
-<li>P(y|x)图片x的分类概率</li>
-<li>P(y)分类结果的边缘概率<br><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/3.png" alt="3"></li>
-<li>各类模型特点<br><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/4.png" alt="4"></li>
-</ul>
-<h1 id="研究方向"><a href="#研究方向" class="headerlink" title="研究方向"></a>研究方向</h1><ul>
-<li>任务方面<ul>
-<li>交互式图像生成</li>
-<li>故事生成</li>
-<li>视频生成</li>
-<li>3D图像生成</li>
-</ul>
-</li>
-<li>模型本身<ul>
-<li>网络结构研究：<em>Instance Norm</em>,<em>Attentive Norm</em></li>
-<li>GAN的稳定性研究</li>
-<li>先验知识的引入</li>
-<li>更好的信息利用方法</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1401,7 +1427,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
