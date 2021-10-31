@@ -214,7 +214,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-13 14:09:52" itemprop="dateModified" datetime="2021-09-13T14:09:52+08:00">2021-09-13</time>
+                <time title="修改时间：2021-10-31 10:38:52" itemprop="dateModified" datetime="2021-10-31T10:38:52+08:00">2021-10-31</time>
               </span>
 
           
@@ -252,62 +252,14 @@
 </ul>
 </li>
 </ul>
-<h1 id="变分自编码器-VAE"><a href="#变分自编码器-VAE" class="headerlink" title="变分自编码器(VAE)"></a>变分自编码器(VAE)</h1><ul>
-<li>编码器压缩数据得到隐特征</li>
-<li>解码器根据隐特征还原数据</li>
-<li>舍弃解码器，将编码器用去特征提取</li>
-<li>disCVAE 拆分</li>
-<li>优点<ul>
-<li>定义了概率密度，有迹可循的生成方法</li>
-<li>后验概率可以作为其他任务的特征使用</li>
-<li>本质上概率图模型，易扩展</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>需要通过变分下届推断，不如自回归模型直接定义的尺度</li>
-<li>利用重构损失优化，生成样本模糊</li>
-</ul>
-</li>
-</ul>
-<h1 id="GAN-生成式对抗网络"><a href="#GAN-生成式对抗网络" class="headerlink" title="GAN(生成式对抗网络)"></a>GAN(生成式对抗网络)</h1><ul>
-<li>不直接对数据的概率分布建模</li>
-<li>通过辨别器度量生成数据与真实数据分布的距离<br><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/1.png" alt="1"></li>
-<li><em>CGAN</em>,<em>CGAN with Auxiliary Classifier</em>,<em>SA-GAN</em>,<em>Big-GAN</em>,<em>AttnGAN</em>,<em>Obj-GAN</em>,<em>Story-GAN</em>,<em>SeqAttnGAN</em></li>
-<li>具体模型架构参考视频</li>
-<li>优点<ul>
-<li>博弈形式隐式地度量数据分布的距离</li>
-<li>生成图像质量高</li>
-</ul>
-</li>
-<li>缺点<ul>
-<li>训练不稳定，有模态坍塌风险</li>
-<li>无法推断概率</li>
-</ul>
-</li>
-</ul>
-<h1 id="评估指标·"><a href="#评估指标·" class="headerlink" title="评估指标·"></a>评估指标·</h1><p><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/2.png" alt="2"></p>
-<ul>
-<li>P(y|x)图片x的分类概率</li>
-<li>P(y)分类结果的边缘概率<br><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/3.png" alt="3"></li>
-<li>各类模型特点<br><img src="/images/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/4.png" alt="4"></li>
-</ul>
-<h1 id="研究方向"><a href="#研究方向" class="headerlink" title="研究方向"></a>研究方向</h1><ul>
-<li>任务方面<ul>
-<li>交互式图像生成</li>
-<li>故事生成</li>
-<li>视频生成</li>
-<li>3D图像生成</li>
-</ul>
-</li>
-<li>模型本身<ul>
-<li>网络结构研究：<em>Instance Norm</em>,<em>Attentive Norm</em></li>
-<li>GAN的稳定性研究</li>
-<li>先验知识的引入</li>
-<li>更好的信息利用方法</li>
-</ul>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/07/25/%E5%9B%BE%E5%83%8F%E7%94%9F%E6%88%90/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -357,7 +309,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-13 14:10:03" itemprop="dateModified" datetime="2021-09-13T14:10:03+08:00">2021-09-13</time>
+                <time title="修改时间：2021-10-31 10:39:14" itemprop="dateModified" datetime="2021-10-31T10:39:14+08:00">2021-10-31</time>
               </span>
 
           
@@ -371,37 +323,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="谣言检测"><a href="#谣言检测" class="headerlink" title="谣言检测"></a>谣言检测</h1><ul>
-<li><p>相关概念<br><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/1.png" alt="1"></p>
-</li>
-<li><p>有监督：分类</p>
-<ul>
-<li>静态特征：内容特征，用户特征，其他特征</li>
-<li>动态特征：序列结构建模，树结构建模</li>
-</ul>
-</li>
-<li><p>无监督：概率图</p>
-</li>
-</ul>
-<p><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/2.png" alt="2"></p>
-<ul>
-<li><p>引入Attention可以不同单词对于谣言判定的权重不同<br><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/3.png" alt="3"></p>
-</li>
-<li><p>序列结构上下文建模的主要问题：</p>
-<ul>
-<li>上下文模糊：不同推文的隐特征计算，依托的前文和后文的信息应有所区别</li>
-<li>基于RNN构建：无法脱离RNN结构建模，因此存在长期依赖难以学习的问题</li>
-</ul>
-</li>
-</ul>
-<h1 id="谣言抑制"><a href="#谣言抑制" class="headerlink" title="谣言抑制"></a>谣言抑制</h1><ul>
-<li><p>信息传播相关模型：线性阈值模型;传染病模型;SIS模型</p>
-</li>
-<li><p>社区结构：模型OPOAO，DOAM<br><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/4.png" alt="4"></p>
-</li>
-</ul>
-<p><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/5.png" alt="5"></p>
-
+          <h1 id="谣言检测"><a href="#谣言检测" class="headerlink" title="谣言检测"></a>谣言检测</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -451,7 +381,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-13 14:09:42" itemprop="dateModified" datetime="2021-09-13T14:09:42+08:00">2021-09-13</time>
+                <time title="修改时间：2021-10-31 10:38:29" itemprop="dateModified" datetime="2021-10-31T10:38:29+08:00">2021-10-31</time>
               </span>
 
           
@@ -466,19 +396,23 @@
 
       
           <h1 id="用户画像"><a href="#用户画像" class="headerlink" title="用户画像"></a>用户画像</h1><ul>
-<li>芝麻信用分的评估</li>
-<li>用户信息标签化，商业分析</li>
-<li>用户属性的标签化框架</li>
-<li><em>Patch Dictionary</em></li>
-<li><em>Meta Learning</em><br><img src="/images/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/1.png" alt="1"></li>
-</ul>
-<h1 id="人格检测"><a href="#人格检测" class="headerlink" title="人格检测"></a>人格检测</h1><h2 id="1-基于数据驱动的研究"><a href="#1-基于数据驱动的研究" class="headerlink" title="1. 基于数据驱动的研究"></a>1. 基于数据驱动的研究</h2><p><img src="/images/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/2.png" alt="2"></p>
-<ul>
-<li>用户人格识别中，样本量小和分布失衡的问题研究(<em>Tomek Link</em>方法)</li>
-</ul>
-<h2 id="2-基于应用驱动的模型"><a href="#2-基于应用驱动的模型" class="headerlink" title="2. 基于应用驱动的模型"></a>2. 基于应用驱动的模型</h2><p><img src="/images/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/3.png" alt="3"></p>
-<p><img src="/images/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/4.png" alt="4"></p>
-
+<li><p>芝麻信用分的评估</p>
+</li>
+<li><p>用户信息标签化，商业分析</p>
+</li>
+<li><p>用户属性的标签化框架</p>
+</li>
+<li><p><em>Patch Dictionary</em></p>
+</li>
+<li><p><em>Meta Learning</em></p></li></ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/07/25/%E4%BA%BA%E6%A0%BC%E6%A3%80%E6%B5%8B_%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -528,7 +462,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-17 14:55:20" itemprop="dateModified" datetime="2021-10-17T14:55:20+08:00">2021-10-17</time>
+                <time title="修改时间：2021-10-31 10:39:21" itemprop="dateModified" datetime="2021-10-31T10:39:21+08:00">2021-10-31</time>
               </span>
 
           
@@ -542,25 +476,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Seq2Seq模型"><a href="#Seq2Seq模型" class="headerlink" title="Seq2Seq模型"></a>Seq2Seq模型</h1><ul>
-<li><p>输入某个序列到模型，转换为另一个序列<br><img src="/images/attention/1.png" alt="1"></p>
-</li>
-<li><p>编码器<br><img src="/images/attention/2.png" alt="2"></p>
-</li>
-<li><p>解码器<br><img src="/images/attention/3.png" alt="3"></p>
-</li>
-<li><p>时间序列展开</p>
-</li>
-</ul>
-<p><img src="/images/attention/4.png" alt="4"></p>
-<ul>
-<li>EOC 初始输入</li>
-</ul>
-<h1 id="Attention机制"><a href="#Attention机制" class="headerlink" title="Attention机制"></a>Attention机制</h1><p><img src="/images/attention/5.png" alt="5"></p>
-<p><img src="/images/attention/6.png" alt="6"></p>
-<p><img src="/images/attention/7.png" alt="7"></p>
-<p><img src="/images/attention/8.png" alt="8"></p>
-
+          <h1 id="Seq2Seq模型"><a href="#Seq2Seq模型" class="headerlink" title="Seq2Seq模型"></a>Seq2Seq模型</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/07/25/attention/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -610,7 +534,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-13 15:34:28" itemprop="dateModified" datetime="2021-09-13T15:34:28+08:00">2021-09-13</time>
+                <time title="修改时间：2021-10-31 10:36:51" itemprop="dateModified" datetime="2021-10-31T10:36:51+08:00">2021-10-31</time>
               </span>
 
           
@@ -626,31 +550,14 @@
       
           <h1 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h1><p>两类线性可分的模式类：$w_1$，$w_2$，设$d(X) = W^TX$,其中$W = [w_1,w_2,…,w_n,w_{n+1}]^T$,$X=[x_1,x_2,…,x_n,1]^T$,$d(X)&gt;0$.</p>
 <p>感知器算法通过对已知类别的训练样本集的学习，寻找一个满足上式的权向量。</p>
-<h1 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h1><ul>
-<li>选择N个分属于$w_1$和$w_2$类的模式样本构成训练样本集<br>$${X_1,…X_N}$$<br>构成增广向量形式，并进行规范化处理。任取权向量初始值$W(1)$，开始迭代，迭代次数$k=1$。</li>
-<li>用全部训练样本进行一轮迭代，计算${W^T(k)}X_i$的值，并修正权向量。<br>分两种情况更新权向量的值：<ol>
-<li>若${W^T(k)}X_i \leqslant0$，分类器对第$i$个模式做了错误分类，权向量校正为$W(k+1)=W(k)+cX_i$  $c$：正的校正增量</li>
-<li>若${W^T(k)}X_i&gt;0$，分类正确，权向量不变：<br>$$W(k+1)=W(k)$$</li>
-</ol>
-</li>
-<li>分析分类结果，只要有一个错误分类，回到第二步，直至所有样本正确分类</li>
-</ul>
-<h1 id="算法特点"><a href="#算法特点" class="headerlink" title="算法特点"></a>算法特点</h1><p>收敛性：经过有限次迭代运算后，求出了一个使所有样本都能正确分类的$W$，则称算法是收敛的。<br>收敛条件：模式类别线性可分</p>
-<h1 id="算法代码1"><a href="#算法代码1" class="headerlink" title="算法代码1"></a>算法代码1</h1><p>编写感知器算法程序，求下列模式分类的解向量</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np </span><br><span class="line">import pandas as pd</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">from mpl_toolkits.mplot3d import Axes3D</span><br><span class="line">w1 = [[0 , 0 , 0 , 1] , [1 , 0 , 0 , 1] , [1 , 0 , 1 , 1] , [1 , 1 , 0 , 1] , [0 , 0 , -1 , -1] , [0 , -1 , -1 , -1] , [0 , -1 , 0 , -1] , [-1 , -1 , -1 , -1]]</span><br><span class="line">w = [-1 , -2 , -2 , 0]</span><br><span class="line">X = [[0 , 0 , 0],</span><br><span class="line">     [1 , 0 , 0],</span><br><span class="line">     [1 , 0 , 1],</span><br><span class="line">     [1 , 1 , 0],</span><br><span class="line">     [0 , 0 , -1],</span><br><span class="line">     [0 , -1 , -1],</span><br><span class="line">     [0 , -1 , 0],</span><br><span class="line">     [-1 , -1 , -1]]</span><br><span class="line">X=np.array(X)</span><br><span class="line">flag = 0</span><br><span class="line">res = [0 , 0 , 0 , 0 , 0 , 0 , 0 , 0]</span><br><span class="line">while(flag != 8):</span><br><span class="line">    flag = 0</span><br><span class="line">    for i in range(8):</span><br><span class="line">        res[i] = w[0] * w1[i][0] + w[1] * w1[i][1] + w[2] * w1[i][2] + w[3] * w1[i][3]</span><br><span class="line">        if res[i] &lt;= 0:</span><br><span class="line">            w[0] = w[0]+w1[i][0]</span><br><span class="line">            w[1] = w[1]+w1[i][1]</span><br><span class="line">            w[2] = w[2]+w1[i][2]</span><br><span class="line">            w[3] = w[3]+w1[i][3]</span><br><span class="line">            flag = flag - 1</span><br><span class="line">        else: </span><br><span class="line">            w = w</span><br><span class="line">            flag = flag + 1</span><br><span class="line">print(w)</span><br><span class="line"></span><br><span class="line">fig = plt.figure(figsize=(12, 8))</span><br><span class="line"># 创建 3D 坐标系</span><br><span class="line">ax = fig.gca(fc=&#x27;whitesmoke&#x27;, projection=&#x27;3d&#x27; )</span><br><span class="line">x1 = np.linspace(0, 2, 9)</span><br><span class="line">x2 = np.linspace(0, 2, 9)</span><br><span class="line">x1,x2 = np.meshgrid(x1, x2)</span><br><span class="line">x3 = (-w[3] - w[0]*x1 -w[1]*x2)/w[2]</span><br><span class="line"></span><br><span class="line">ax.plot_surface(X=x1,</span><br><span class="line">                Y=x2,</span><br><span class="line">                Z=x3,</span><br><span class="line">                color=&#x27;b&#x27;,</span><br><span class="line">                alpha=0.2</span><br><span class="line">               )</span><br><span class="line">ax.set(xlabel=&#x27;X&#x27;,</span><br><span class="line">       ylabel=&#x27;Y&#x27;,</span><br><span class="line">       zlabel=&#x27;Z&#x27;,</span><br><span class="line">       xlim=(0, 2),</span><br><span class="line">       ylim=(0, 2),</span><br><span class="line">       zlim=(0, 2),</span><br><span class="line">       xticks=np.arange(0, 2, 1),</span><br><span class="line">       yticks=np.arange(0, 2, 1),</span><br><span class="line">       zticks=np.arange(0, 2, 1)</span><br><span class="line">      )</span><br><span class="line">    </span><br><span class="line">half = int(len(X)/2)</span><br><span class="line">X[4:,:] = - X[4:,:]</span><br><span class="line">x = X[:half, 0]  </span><br><span class="line">y = X[:half, 1]  </span><br><span class="line">z = X[:half, 2]  </span><br><span class="line"># fig = plt.figure()</span><br><span class="line"># ax = Axes3D(fig)</span><br><span class="line">ax.scatter(x, y, z,c=&#x27;y&#x27;,marker=&#x27;o&#x27;)</span><br><span class="line"></span><br><span class="line">x2 = X[half:, 0]  </span><br><span class="line">y2 = X[half:, 1]  </span><br><span class="line">z2 = X[half:, 2]  </span><br><span class="line">ax.scatter(x2, y2, z2,c=&#x27;r&#x27;,marker=&#x27;x&#x27;)</span><br><span class="line">for i_x, i_y,i_z in zip(X[:,0],X[:,1],X[:,2]):</span><br><span class="line">    ax.text(i_x, i_y,i_z, &#x27;(&#123;&#125;, &#123;&#125;,&#123;&#125;)&#x27;.format(int(i_x), int(i_y),int(i_z)))</span><br><span class="line">    ax.set_zlabel(&#x27;Z&#x27;)</span><br><span class="line">    ax.set_ylabel(&#x27;Y&#x27;)</span><br><span class="line">    ax.set_xlabel(&#x27;X&#x27;)</span><br><span class="line"></span><br><span class="line">plt.show()    </span><br></pre></td></tr></table></figure>
-
-<h1 id="算法代码2"><a href="#算法代码2" class="headerlink" title="算法代码2"></a>算法代码2</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np </span><br><span class="line">import pandas as pd</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">from mpl_toolkits.mplot3d import Axes3D  </span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    path =  &#x27;data.txt&#x27;</span><br><span class="line">    data = pd.read_csv(path, header=None, names=[&#x27;x&#x27;, &#x27;y&#x27;,&#x27;z&#x27;])</span><br><span class="line">    X = np.array(data.iloc[:,:])</span><br><span class="line"></span><br><span class="line">    X = np.column_stack((X, np.ones((len(X),1))))   </span><br><span class="line">    X[4:,:] = - X[4:,:]</span><br><span class="line">    </span><br><span class="line">    c = 1</span><br><span class="line">    w = np.array([-1,-2,-2,0])</span><br><span class="line">    flag = True</span><br><span class="line">    cnt = 0</span><br><span class="line">    while flag:</span><br><span class="line">        cnt += 1</span><br><span class="line">        flag = False</span><br><span class="line">        for x in X:</span><br><span class="line">            # print(x)</span><br><span class="line"></span><br><span class="line">            if w @ x &lt;= 0:</span><br><span class="line">                w = w + c*x</span><br><span class="line">                flag = True</span><br><span class="line">            </span><br><span class="line">    print(w)</span><br><span class="line">    print(cnt)</span><br><span class="line">    </span><br><span class="line">    fig = plt.figure(figsize=(12, 8))</span><br><span class="line">    </span><br><span class="line">    # 创建 3D 坐标系</span><br><span class="line">    ax = fig.gca(fc=&#x27;whitesmoke&#x27;,</span><br><span class="line">                projection=&#x27;3d&#x27; </span><br><span class="line">                )</span><br><span class="line"></span><br><span class="line">    x1 = np.linspace(0, 2, 9)</span><br><span class="line">    x2 = np.linspace(0, 2, 9)</span><br><span class="line">    </span><br><span class="line">    x1,x2 = np.meshgrid(x1, x2)</span><br><span class="line">    x3 = (-w[3] - w[0]*x1 -w[1]*x2)/w[2]</span><br><span class="line">    ax.plot_surface(X=x1,</span><br><span class="line">                Y=x2,</span><br><span class="line">                Z=x3,</span><br><span class="line">                color=&#x27;b&#x27;,</span><br><span class="line">                alpha=0.2</span><br><span class="line">               )</span><br><span class="line">    ax.set(xlabel=&#x27;X&#x27;,</span><br><span class="line">       ylabel=&#x27;Y&#x27;,</span><br><span class="line">       zlabel=&#x27;Z&#x27;,</span><br><span class="line">       xlim=(0, 2),</span><br><span class="line">       ylim=(0, 2),</span><br><span class="line">       zlim=(0, 2),</span><br><span class="line">       xticks=np.arange(0, 2, 1),</span><br><span class="line">       yticks=np.arange(0, 2, 1),</span><br><span class="line">       zticks=np.arange(0, 2, 1)</span><br><span class="line">      )</span><br><span class="line">    </span><br><span class="line">    half = int(len(X)/2)</span><br><span class="line">    X[4:,:] = - X[4:,:]</span><br><span class="line">    x = X[:half, 0]  </span><br><span class="line">    y = X[:half, 1]  </span><br><span class="line">    z = X[:half, 2]</span><br><span class="line">    ax.scatter(x, y, z,c=&#x27;y&#x27;,marker=&#x27;o&#x27;)</span><br><span class="line"></span><br><span class="line">    x2 = X[half:, 0]  </span><br><span class="line">    y2 = X[half:, 1]  </span><br><span class="line">    z2 = X[half:, 2]  </span><br><span class="line">    ax.scatter(x2, y2, z2,c=&#x27;r&#x27;,marker=&#x27;x&#x27;)</span><br><span class="line">    for i_x, i_y,i_z in zip(X[:,0],X[:,1],X[:,2]):</span><br><span class="line">        ax.text(i_x, i_y,i_z, &#x27;(&#123;&#125;, &#123;&#125;,&#123;&#125;)&#x27;.format(int(i_x), int(i_y),int(i_z)))</span><br><span class="line">    ax.set_zlabel(&#x27;Z&#x27;)</span><br><span class="line">    ax.set_ylabel(&#x27;Y&#x27;)</span><br><span class="line">    ax.set_xlabel(&#x27;X&#x27;)</span><br><span class="line"></span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
-<h1 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h1><p>对于$M$类模式应存在$M$个判决函数：{$d_i$，$i=1,…M$}</p>
-<p><em>算法主要内容</em><br>设有$M$种模式类别：$w_1$,$w_2$,…,$w_M$<br>设其权向量初值为：$W_j(1)$,$j=1,…,M$<br>训练样本为增广向量形式，但不需要规范化处理<br>第$k$次迭代时，一个属于$w_i$类的模式样本$X$被送入分类器，计算所有判别函数<br>$$d_j(k)=W_j^T(k)X,j=1,…,M$$<br>分两种情况修改权向量：</p>
-<ul>
-<li><p>若$d_i(k)&gt;d_j(k),\forall j\ne i;j=1,2,…,M$则权向量不变；</p>
-<p>$$W_j(k+1)=W_j(k),j=1,2,…,M$$</p>
-</li>
-<li><p>若第$l$个权向量使$d_i(k)\leqslant d_i(k)$，则相应的权向量做调整，即:</p>
-</li>
-</ul>
-<p>$$\left{\begin{matrix}<br>W_i(k+1)=W_i(k)+cX,\<br>Wl(k+1)=W_l(k)-cX,\<br>W_j(k+1)=W_j(k),j\ne i,l<br>\end{matrix}\right.<br>其中c为正的校正增量<br>$$</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/07/25/%E6%84%9F%E7%9F%A5%E5%99%A8/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -700,7 +607,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-13 15:36:30" itemprop="dateModified" datetime="2021-09-13T15:36:30+08:00">2021-09-13</time>
+                <time title="修改时间：2021-10-31 10:39:36" itemprop="dateModified" datetime="2021-10-31T10:39:36+08:00">2021-10-31</time>
               </span>
 
           
@@ -714,25 +621,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Markdown学习笔记"><a href="#Markdown学习笔记" class="headerlink" title="Markdown学习笔记"></a>Markdown学习笔记</h1><h2 id="1-标题写法"><a href="#1-标题写法" class="headerlink" title="1.标题写法"></a>1.标题写法</h2><p>前置加“ # ”，一级标题加一个，二级标题加两个，依此类推…（注意不要忽略掉“ # ”后面的空格）</p>
-<h2 id="2-字体"><a href="#2-字体" class="headerlink" title="2.字体"></a>2.字体</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*斜体文本*</span><br><span class="line">**粗体文本**</span><br><span class="line">***粗斜体文本***</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-分割线"><a href="#3-分割线" class="headerlink" title="3.分割线"></a>3.分割线</h2><p>连续的三个以上的“ * ”或“ - ”</p>
-<h2 id="4-下划线"><a href="#4-下划线" class="headerlink" title="4.下划线"></a>4.下划线</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;u&gt;带下划线文本&lt;/u&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-脚注"><a href="#5-脚注" class="headerlink" title="5.脚注"></a>5.脚注</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[^要注明的文本]</span><br></pre></td></tr></table></figure>
-
-<p>后注与前注有所不同</p>
-<h2 id="6-代码框"><a href="#6-代码框" class="headerlink" title="6.代码框"></a>6.代码框</h2><ul>
-<li><p>连续三个“ ~ ”</p>
-</li>
-<li><p>对于单个代码框可以“ ~ ”…” ~ “链接</p>
-</li>
-</ul>
-<h2 id="7-区块"><a href="#7-区块" class="headerlink" title="7.区块"></a>7.区块</h2><p>​    “ &gt;  “+文字，多层嵌套的话就用多个” &gt; “</p>
-<h2 id="8-链接"><a href="#8-链接" class="headerlink" title="8.链接"></a>8.链接</h2><p>这是一个链接&lt; 网址 &gt;</p>
-<p>这是一个链接[链接名]（网址）</p>
-
+          <h1 id="Markdown学习笔记"><a href="#Markdown学习笔记" class="headerlink" title="Markdown学习笔记"></a>Markdown学习笔记</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/07/25/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -782,7 +679,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-17 14:55:33" itemprop="dateModified" datetime="2021-10-17T14:55:33+08:00">2021-10-17</time>
+                <time title="修改时间：2021-10-31 10:39:30" itemprop="dateModified" datetime="2021-10-31T10:39:30+08:00">2021-10-31</time>
               </span>
 
           
@@ -796,34 +693,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="1-用户位置预测、兴趣点（POI-推荐"><a href="#1-用户位置预测、兴趣点（POI-推荐" class="headerlink" title="1. 用户位置预测、兴趣点（POI)推荐"></a>1. 用户位置预测、兴趣点（POI)推荐</h1><ul>
-<li>智能城市</li>
-<li>论文<br><img src="/images/LBSN/1.png" alt="1"></li>
-<li>马尔科夫模型+多维特征融合</li>
-<li>多维特征融合</li>
-<li>多维特征融合+分类/回归</li>
-<li>特征融合+矩阵分解</li>
-<li>主题建模</li>
-<li>图嵌入学习(<em>Graph Embedding</em>)</li>
-<li>循环神经网络+注意力</li>
-<li>循环神经网络+周期注意力</li>
-<li>循环神经网络+上下文注意力(<em>DeepMove</em>)</li>
-<li>图神经网络+注意力</li>
-</ul>
-<h1 id="2-拓展思路"><a href="#2-拓展思路" class="headerlink" title="2. 拓展思路"></a>2. 拓展思路</h1><ul>
-<li>注意力机制应用更普遍、复杂</li>
-<li>多模态数据的综合利用匮乏，尤其是对带有情感状态的文本内容挖掘不足</li>
-<li>建模用户在特定时间窗口内的访问偏好有待深入</li>
-</ul>
-<h1 id="3-LBSN中用户位置隐私的保护"><a href="#3-LBSN中用户位置隐私的保护" class="headerlink" title="3. LBSN中用户位置隐私的保护"></a>3. LBSN中用户位置隐私的保护</h1><ul>
-<li>在线保护：Cloak,Dummy,Obfuscation(Pseudo-location)</li>
-<li>Cloak-K匿名<br><img src="/images/LBSN/2.png" alt="2"></li>
-<li>dummy-K匿名</li>
-<li>obfuscation-差分隐私(地理不可分辨性)指的是地理上相近的位置经过保护机制的模糊会产生相近的模糊位置</li>
-<li>Game-based obfuscation 动态防守-攻击博弈下的模糊方法</li>
-<li>基于混合隐私度量的obfuscation<br><img src="/images/LBSN/3.png" alt="3"></li>
-</ul>
-
+          <h1 id="1-用户位置预测、兴趣点（POI-推荐"><a href="#1-用户位置预测、兴趣点（POI-推荐" class="headerlink" title="1. 用户位置预测、兴趣点（POI)推荐"></a>1. 用户位置预测、兴趣点（POI)推荐</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/07/25/LBSN/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
