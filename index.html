@@ -183,6 +183,79 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/11/21/Dropout/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="zx zhou">
+      <meta itemprop="description" content="保持清醒">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="zzZzx's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/11/21/Dropout/" class="post-title-link" itemprop="url">Dropout和学习率</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-21 15:16:59 / 修改时间：15:18:49" itemprop="dateCreated datePublished" datetime="2021-11-21T15:16:59+08:00">2021-11-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Dropout和学习率"><a href="#Dropout和学习率" class="headerlink" title="Dropout和学习率"></a>Dropout和学习率</h2><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><ol>
+<li>若模型参数太多，而训练样本太少的时候，容易出现过拟合的现象。</li>
+<li>过拟合的表现：模型在训练数据上损失函数较小，预测准确率较高，但是在测试数据上损失函数比较大，预测准确率低</li>
+<li>解决方法之一：模型集成，训练多个模型进行组合，但是费时</li>
+<li>Dropout有效缓解过拟合，一定程度上达到正则化的效果，在训练过程中，随机的忽略部分神经元，在正向传播过程中，这些被忽略的神经元对下游神经元的贡献效果暂时消失。在反向传播时，这些神经元也不会有任何权值的更新。</li>
+<li>在每个训练批次中，通过忽略一半的特征检测器（让一半的隐层节点值为0），可以明显的减少过拟合现象。减少特征检测器间的相互作用（指某些检测器依赖其他检测器才能发挥作用）</li>
+<li>等于0.5的时候效果最好，随机生成的网络结构最多</li>
+</ol>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/11/21/Dropout/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/10/24/%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -214,7 +287,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-31 10:37:28" itemprop="dateModified" datetime="2021-10-31T10:37:28+08:00">2021-10-31</time>
+                <time title="修改时间：2021-11-21 15:21:10" itemprop="dateModified" datetime="2021-11-21T15:21:10+08:00">2021-11-21</time>
               </span>
 
           
@@ -229,6 +302,12 @@
 
       
           <h1 id="CCF-X-BDCI-产品观点评论比赛"><a href="#CCF-X-BDCI-产品观点评论比赛" class="headerlink" title="CCF X BDCI 产品观点评论比赛"></a>CCF X BDCI 产品观点评论比赛</h1><h2 id="BERT模型"><a href="#BERT模型" class="headerlink" title="BERT模型"></a>BERT模型</h2><p>BERT模型主要是针对word2vec等模型的不足，在之前的预训练模型（包括word2vec，ELMo等）都会生成词向量，这种类别的预训练模型属于domain transfer。而近一两年提出的ULMFiT，GPT，BERT等都属于模型迁移。BERT 模型是将预训练模型和下游任务模型结合在一起的，核心目的就是：是把下游具体NLP任务的活逐渐移到预训练产生词向量上。</p>
+<h2 id="主要亮点"><a href="#主要亮点" class="headerlink" title="主要亮点"></a>主要亮点</h2><ol>
+<li><p>双向Transformers</p>
+<p><img src="/images/%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/%E6%88%AA%E5%B1%8F2021-10-24%20%E4%B8%8B%E5%8D%882.48.45.png" alt="截屏2021-10-24 下午2.48.45"></p>
+</li>
+<li><p>句子级别的应用</p>
+<p>通过使用segment同时考虑了句子级别的预测</p></li></ol>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/10/24/%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/#more" rel="contents">
@@ -361,7 +440,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-31 10:37:20" itemprop="dateModified" datetime="2021-10-31T10:37:20+08:00">2021-10-31</time>
+                <time title="修改时间：2021-11-21 15:20:46" itemprop="dateModified" datetime="2021-11-21T15:20:46+08:00">2021-11-21</time>
               </span>
 
           
@@ -376,6 +455,15 @@
 
       
           <h1 id="评论文本的数据预处理"><a href="#评论文本的数据预处理" class="headerlink" title="评论文本的数据预处理"></a>评论文本的数据预处理</h1><p>对评论进行表示层的预处理，将评论从纯自然的中文形式，转换为模型适用的词、字符或向量形式。</p>
+<p>清洗噪声之后，下一环节为中文分词</p>
+<ul>
+<li>词义消歧<ol>
+<li>对于<em>一词多义</em>问题：采用Word2Vec中的most_similar函数对相似词进行替换处理，将多义词替换为语义层面相近的无歧义词。</li>
+<li>对于<em>指代消解</em>问题：通过VSM(向量空间模型)和余弦相似度等进行处理。</li>
+</ol>
+</li>
+<li>预定义词表</li>
+</ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/09/25/%E8%AF%84%E8%AE%BA%E6%A0%87%E7%AD%BE%E6%8F%90%E5%8F%96/#more" rel="contents">
@@ -433,7 +521,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-31 10:39:06" itemprop="dateModified" datetime="2021-10-31T10:39:06+08:00">2021-10-31</time>
+                <time title="修改时间：2021-11-21 15:22:28" itemprop="dateModified" datetime="2021-11-21T15:22:28+08:00">2021-11-21</time>
               </span>
 
           
@@ -450,6 +538,23 @@
           <h1 id="文本分类"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类</h1><h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h2><ul>
 <li>用计算机对文本或其他实体按照一定的分类体系或标准进行自动分类标记</li>
 </ul>
+<h2 id="2-特征表示"><a href="#2-特征表示" class="headerlink" title="2 特征表示"></a>2 特征表示</h2><ul>
+<li><p>BoW词袋模型</p>
+<p>忽略了文本中的词序</p>
+</li>
+<li><p>TF-IDF词频-逆文档频率</p>
+<p>使用词频和逆文档频率来建模文本</p>
+</li>
+<li><p>N-gram</p>
+<p>将相邻的文字和词组信息纳入表征的词典中</p>
+</li>
+<li><p>One-hot热独码</p>
+</li>
+<li><p>Word2vec</p>
+<p>使用局部上下文信息来获取词向量</p>
+</li>
+<li><p>Glove词向量 </p>
+<p>使用局部上下文信息和全局统计特征</p></li></ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/09/12/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/#more" rel="contents">
@@ -507,7 +612,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-31 10:37:10" itemprop="dateModified" datetime="2021-10-31T10:37:10+08:00">2021-10-31</time>
+                <time title="修改时间：2021-11-21 15:20:31" itemprop="dateModified" datetime="2021-11-21T15:20:31+08:00">2021-11-21</time>
               </span>
 
           
@@ -521,7 +626,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="研究概述"><a href="#研究概述" class="headerlink" title="研究概述"></a>研究概述</h1>
+          <h1 id="研究概述"><a href="#研究概述" class="headerlink" title="研究概述"></a>研究概述</h1><p><img src="/images/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/1.png" alt="1"></p>
+<ul>
+<li>模型角度：<ul>
+<li>监督方法(需要标签数据):<ul>
+<li><em>classification techniques</em><ul>
+<li>从用户属性中提取特征</li>
+<li>训练分类用以预测用户身份对</li>
+</ul>
+</li>
+<li><em>embedding techniques</em><ul>
+<li>获取用户表示后进行身份关联</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>半监督方法(需要标签数据)<ul>
+<li>在模型学习时同时考虑有标签与无标签的用户身份对</li>
+</ul>
+</li>
+<li>无监督方法(无需标签数据)<ul>
+<li>已有工作较少</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/07/25/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/#more" rel="contents">
@@ -579,7 +709,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-31 10:37:01" itemprop="dateModified" datetime="2021-10-31T10:37:01+08:00">2021-10-31</time>
+                <time title="修改时间：2021-11-21 15:20:13" itemprop="dateModified" datetime="2021-11-21T15:20:13+08:00">2021-11-21</time>
               </span>
 
           
@@ -597,6 +727,10 @@
 <li>基于目标的话题建模：TTM</li>
 <li>基于时间的话题建模：LLA</li>
 <li>基于领域知识的话题建模：Hashtag-LDA</li>
+</ul>
+<h1 id="非概率话题模型方法"><a href="#非概率话题模型方法" class="headerlink" title="非概率话题模型方法"></a>非概率话题模型方法</h1><ul>
+<li>基于文档的话题建模</li>
+<li>基于特征的话题建模</li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -655,7 +789,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-31 10:38:38" itemprop="dateModified" datetime="2021-10-31T10:38:38+08:00">2021-10-31</time>
+                <time title="修改时间：2021-11-21 15:21:46" itemprop="dateModified" datetime="2021-11-21T15:21:46+08:00">2021-11-21</time>
               </span>
 
           
@@ -672,6 +806,10 @@
           <h1 id="图像取证"><a href="#图像取证" class="headerlink" title="图像取证"></a>图像取证</h1><ul>
 <li>二分类任务：是否经过修改</li>
 <li>多分类任务：在上一个任务的基础上区分用何种方式进行伪造，相机识别</li>
+</ul>
+<h1 id="研究现状"><a href="#研究现状" class="headerlink" title="研究现状"></a>研究现状</h1><ul>
+<li>光响应非均匀性<br><img src="/images/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/1.png" alt="1"></li>
+<li>隐写分析模型</li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -730,7 +868,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-31 10:37:38" itemprop="dateModified" datetime="2021-10-31T10:37:38+08:00">2021-10-31</time>
+                <time title="修改时间：2021-11-21 15:21:25" itemprop="dateModified" datetime="2021-11-21T15:21:25+08:00">2021-11-21</time>
               </span>
 
           
@@ -744,7 +882,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="人群画像"><a href="#人群画像" class="headerlink" title="人群画像"></a>人群画像</h1>
+          <h1 id="人群画像"><a href="#人群画像" class="headerlink" title="人群画像"></a>人群画像</h1><ul>
+<li>群体<img src="/images/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/1.png" alt="1"></li>
+</ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/07/25/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/#more" rel="contents">
@@ -802,7 +942,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-31 10:36:35" itemprop="dateModified" datetime="2021-10-31T10:36:35+08:00">2021-10-31</time>
+                <time title="修改时间：2021-11-21 15:19:35" itemprop="dateModified" datetime="2021-11-21T15:19:35+08:00">2021-11-21</time>
               </span>
 
           
@@ -826,82 +966,14 @@
 <li><p>动态属性</p>
 <ul>
 <li>用户行为分析</li>
-</ul></li></ul>
+</ul>
+</li>
+<li><p>基于标题文本特征的方法<br><img src="/images/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/1.png" alt="1"></p>
+</li>
+<li><p>基于标题和正文匹配程度的方法<br><img src="/images/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/2.png" alt="2"></p></li></ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/07/25/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zxzhou9.github.io/2021/07/25/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="zx zhou">
-      <meta itemprop="description" content="保持清醒">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zzZzx's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/25/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/" class="post-title-link" itemprop="url">图像语义</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-07-25 11:38:15" itemprop="dateCreated datePublished" datetime="2021-07-25T11:38:15+08:00">2021-07-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-31 10:38:59" itemprop="dateModified" datetime="2021-10-31T10:38:59+08:00">2021-10-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="场景图自动生成-Neural-Motifs"><a href="#场景图自动生成-Neural-Motifs" class="headerlink" title="场景图自动生成(Neural Motifs)"></a>场景图自动生成(Neural Motifs)</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/07/25/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -991,7 +1063,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

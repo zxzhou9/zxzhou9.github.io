@@ -60,13 +60,15 @@
   <entry>
     <title>LBSN专题</title>
     <url>/2021/07/25/LBSN/</url>
-    <content><![CDATA[<h1 id="1-用户位置预测、兴趣点（POI-推荐"><a href="#1-用户位置预测、兴趣点（POI-推荐" class="headerlink" title="1. 用户位置预测、兴趣点（POI)推荐"></a>1. 用户位置预测、兴趣点（POI)推荐</h1><span id="more"></span>
-
-<ul>
+    <content><![CDATA[<h1 id="1-用户位置预测、兴趣点（POI-推荐"><a href="#1-用户位置预测、兴趣点（POI-推荐" class="headerlink" title="1. 用户位置预测、兴趣点（POI)推荐"></a>1. 用户位置预测、兴趣点（POI)推荐</h1><ul>
 <li>智能城市</li>
 <li>论文<br><img src="/images/LBSN/1.png" alt="1"></li>
 <li>马尔科夫模型+多维特征融合</li>
 <li>多维特征融合</li>
+</ul>
+<span id="more"></span>
+
+<ul>
 <li>多维特征融合+分类/回归</li>
 <li>特征融合+矩阵分解</li>
 <li>主题建模</li>
@@ -97,11 +99,9 @@
   <entry>
     <title>Attention</title>
     <url>/2021/07/25/attention/</url>
-    <content><![CDATA[<h1 id="Seq2Seq模型"><a href="#Seq2Seq模型" class="headerlink" title="Seq2Seq模型"></a>Seq2Seq模型</h1><span id="more"></span>
-
-<ul>
+    <content><![CDATA[<h1 id="Seq2Seq模型"><a href="#Seq2Seq模型" class="headerlink" title="Seq2Seq模型"></a>Seq2Seq模型</h1><ul>
 <li><p>输入某个序列到模型，转换为另一个序列<br><img src="/images/attention/1.png" alt="1"></p>
-</li>
+<span id="more"></span></li>
 <li><p>编码器<br><img src="/images/attention/2.png" alt="2"></p>
 </li>
 <li><p>解码器<br><img src="/images/attention/3.png" alt="3"></p>
@@ -125,12 +125,12 @@
   <entry>
     <title>图像语义</title>
     <url>/2021/07/25/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/</url>
-    <content><![CDATA[<h1 id="场景图自动生成-Neural-Motifs"><a href="#场景图自动生成-Neural-Motifs" class="headerlink" title="场景图自动生成(Neural Motifs)"></a>场景图自动生成(Neural Motifs)</h1><span id="more"></span>
-
-<h1 id="scene-Graphs"><a href="#scene-Graphs" class="headerlink" title="scene Graphs"></a><em>scene Graphs</em></h1><p><img src="/images/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/1.png" alt="1"></p>
+    <content><![CDATA[<h1 id="场景图自动生成-Neural-Motifs"><a href="#场景图自动生成-Neural-Motifs" class="headerlink" title="场景图自动生成(Neural Motifs)"></a>场景图自动生成(Neural Motifs)</h1><h1 id="scene-Graphs"><a href="#scene-Graphs" class="headerlink" title="scene Graphs"></a><em>scene Graphs</em></h1><p><img src="/images/%E5%9B%BE%E5%83%8F%E8%AF%AD%E4%B9%89/1.png" alt="1"></p>
 <ul>
 <li>三维场景图(牛逼..)</li>
 </ul>
+<span id="more"></span>
+
 <h1 id="视频场景识别"><a href="#视频场景识别" class="headerlink" title="视频场景识别"></a>视频场景识别</h1><ul>
 <li>图像序列<ul>
 <li>考虑全局角度的场景运动信息</li>
@@ -209,9 +209,9 @@
     <url>/2021/07/25/%E6%84%9F%E7%9F%A5%E5%99%A8/</url>
     <content><![CDATA[<h1 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h1><p>两类线性可分的模式类：$w_1$，$w_2$，设$d(X) = W^TX$,其中$W = [w_1,w_2,…,w_n,w_{n+1}]^T$,$X=[x_1,x_2,…,x_n,1]^T$,$d(X)&gt;0$.</p>
 <p>感知器算法通过对已知类别的训练样本集的学习，寻找一个满足上式的权向量。</p>
-<span id="more"></span>
+<h1 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h1><span id="more"></span>
 
-<h1 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h1><ul>
+<ul>
 <li>选择N个分属于$w_1$和$w_2$类的模式样本构成训练样本集<br>$${X_1,…X_N}$$<br>构成增广向量形式，并进行规范化处理。任取权向量初始值$W(1)$，开始迭代，迭代次数$k=1$。</li>
 <li>用全部训练样本进行一轮迭代，计算${W^T(k)}X_i$的值，并修正权向量。<br>分两种情况更新权向量的值：<ol>
 <li>若${W^T(k)}X_i \leqslant0$，分类器对第$i$个模式做了错误分类，权向量校正为$W(k+1)=W(k)+cX_i$  $c$：正的校正增量</li>
@@ -343,11 +343,11 @@
 <ul>
 <li>用户行为分析</li>
 </ul>
-<span id="more"></span></li>
+</li>
 <li><p>基于标题文本特征的方法<br><img src="/images/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/1.png" alt="1"></p>
 </li>
 <li><p>基于标题和正文匹配程度的方法<br><img src="/images/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/2.png" alt="2"></p>
-</li>
+<span id="more"></span></li>
 <li><p>基于社交网站用户行为的方法<br><img src="/images/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/3.png" alt="3"></p>
 </li>
 <li><p>总结<br><img src="/images/%E6%A0%87%E9%A2%98%E5%85%9A%E6%A3%80%E6%B5%8B/4.png" alt="4"></p>
@@ -361,19 +361,18 @@
   <entry>
     <title>信息可信性</title>
     <url>/2021/07/25/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/</url>
-    <content><![CDATA[<h1 id="谣言检测"><a href="#谣言检测" class="headerlink" title="谣言检测"></a>谣言检测</h1><span id="more"></span>
-
-<ul>
-<li><p>相关概念<br><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/1.png" alt="1"></p>
-</li>
-<li><p>有监督：分类</p>
-<ul>
+    <content><![CDATA[<h1 id="谣言检测"><a href="#谣言检测" class="headerlink" title="谣言检测"></a>谣言检测</h1><ul>
+<li>相关概念<br><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/1.png" alt="1"></li>
+<li>有监督：分类<ul>
 <li>静态特征：内容特征，用户特征，其他特征</li>
 <li>动态特征：序列结构建模，树结构建模</li>
 </ul>
 </li>
-<li><p>无监督：概率图</p>
-</li>
+</ul>
+<span id="more"></span>
+
+<ul>
+<li>无监督：概率图</li>
 </ul>
 <p><img src="/images/%E4%BF%A1%E6%81%AF%E5%8F%AF%E4%BF%A1%E6%80%A7/2.png" alt="2"></p>
 <ul>
@@ -401,11 +400,12 @@
   <entry>
     <title>群体画像</title>
     <url>/2021/07/25/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/</url>
-    <content><![CDATA[<h1 id="人群画像"><a href="#人群画像" class="headerlink" title="人群画像"></a>人群画像</h1><span id="more"></span>
+    <content><![CDATA[<h1 id="人群画像"><a href="#人群画像" class="headerlink" title="人群画像"></a>人群画像</h1><ul>
+<li>群体<img src="/images/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/1.png" alt="1"></li>
+</ul>
+<span id="more"></span>
 
 <ul>
-<li><p>群体<img src="/images/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/1.png" alt="1"></p>
-</li>
 <li><p>社会群体和社会计算之间关联</p>
 <img src="/images/%E7%BE%A4%E4%BD%93%E7%94%BB%E5%83%8F/2.png" alt="2" style="zoom:75%;"></li>
 <li><p>群体发现(划分算法)</p>
@@ -431,12 +431,12 @@
 <li>二分类任务：是否经过修改</li>
 <li>多分类任务：在上一个任务的基础上区分用何种方式进行伪造，相机识别</li>
 </ul>
-<span id="more"></span>
-
 <h1 id="研究现状"><a href="#研究现状" class="headerlink" title="研究现状"></a>研究现状</h1><ul>
 <li>光响应非均匀性<br><img src="/images/%E8%A7%86%E9%A2%91%E5%8F%96%E8%AF%81/1.png" alt="1"></li>
 <li>隐写分析模型</li>
 </ul>
+<span id="more"></span>
+
 <h1 id="视频造假与识别"><a href="#视频造假与识别" class="headerlink" title="视频造假与识别"></a>视频造假与识别</h1><ul>
 <li><p>造假方式</p>
 <ul>
@@ -475,9 +475,7 @@
   <entry>
     <title>跨社交网络</title>
     <url>/2021/07/25/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/</url>
-    <content><![CDATA[<h1 id="研究概述"><a href="#研究概述" class="headerlink" title="研究概述"></a>研究概述</h1><span id="more"></span>
-
-<p><img src="/images/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/1.png" alt="1"></p>
+    <content><![CDATA[<h1 id="研究概述"><a href="#研究概述" class="headerlink" title="研究概述"></a>研究概述</h1><p><img src="/images/%E8%B7%A8%E7%A4%BE%E4%BA%A4%E7%BD%91%E7%BB%9C/1.png" alt="1"></p>
 <ul>
 <li>模型角度：<ul>
 <li>监督方法(需要标签数据):<ul>
@@ -503,6 +501,8 @@
 </ul>
 </li>
 </ul>
+<span id="more"></span>
+
 <h1 id="跨网络社区发现"><a href="#跨网络社区发现" class="headerlink" title="跨网络社区发现"></a>跨网络社区发现</h1><ul>
 <li>常见的社区发现方法<ul>
 <li>基于贝叶斯概率图模型的主题模型</li>
@@ -522,8 +522,6 @@
     <content><![CDATA[<h1 id="文本分类"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类</h1><h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1 概念"></a>1 概念</h2><ul>
 <li>用计算机对文本或其他实体按照一定的分类体系或标准进行自动分类标记</li>
 </ul>
-<span id="more"></span>
-
 <h2 id="2-特征表示"><a href="#2-特征表示" class="headerlink" title="2 特征表示"></a>2 特征表示</h2><ul>
 <li><p>BoW词袋模型</p>
 <p>忽略了文本中的词序</p>
@@ -541,7 +539,7 @@
 </li>
 <li><p>Glove词向量 </p>
 <p>使用局部上下文信息和全局统计特征</p>
-</li>
+<span id="more"></span></li>
 </ul>
 <h2 id="3-分类模型"><a href="#3-分类模型" class="headerlink" title="3 分类模型"></a>3 分类模型</h2><h3 id="浅层学习"><a href="#浅层学习" class="headerlink" title="浅层学习"></a>浅层学习</h3><ul>
 <li>NB朴素贝叶斯；HMM</li>
@@ -604,12 +602,12 @@
 <li>基于时间的话题建模：LLA</li>
 <li>基于领域知识的话题建模：Hashtag-LDA</li>
 </ul>
-<span id="more"></span>
-
 <h1 id="非概率话题模型方法"><a href="#非概率话题模型方法" class="headerlink" title="非概率话题模型方法"></a>非概率话题模型方法</h1><ul>
 <li>基于文档的话题建模</li>
 <li>基于特征的话题建模</li>
 </ul>
+<span id="more"></span>
+
 <h1 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h1><ul>
 <li>话题模型困惑度</li>
 <li>归一化点户信息</li>
@@ -669,8 +667,6 @@
     <title>评论标签提取</title>
     <url>/2021/09/25/%E8%AF%84%E8%AE%BA%E6%A0%87%E7%AD%BE%E6%8F%90%E5%8F%96/</url>
     <content><![CDATA[<h1 id="评论文本的数据预处理"><a href="#评论文本的数据预处理" class="headerlink" title="评论文本的数据预处理"></a>评论文本的数据预处理</h1><p>对评论进行表示层的预处理，将评论从纯自然的中文形式，转换为模型适用的词、字符或向量形式。</p>
-<span id="more"></span>
-
 <p>清洗噪声之后，下一环节为中文分词</p>
 <ul>
 <li>词义消歧<ol>
@@ -680,6 +676,8 @@
 </li>
 <li>预定义词表</li>
 </ul>
+<span id="more"></span>
+
 <p>针对罕见的地名或者演出形式，在分词过程中容易被拆分。</p>
 <ul>
 <li>未登录词</li>
@@ -818,15 +816,13 @@
     <title>CCF X BDCI 产品观点评论比赛</title>
     <url>/2021/10/24/%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<h1 id="CCF-X-BDCI-产品观点评论比赛"><a href="#CCF-X-BDCI-产品观点评论比赛" class="headerlink" title="CCF X BDCI 产品观点评论比赛"></a>CCF X BDCI 产品观点评论比赛</h1><h2 id="BERT模型"><a href="#BERT模型" class="headerlink" title="BERT模型"></a>BERT模型</h2><p>BERT模型主要是针对word2vec等模型的不足，在之前的预训练模型（包括word2vec，ELMo等）都会生成词向量，这种类别的预训练模型属于domain transfer。而近一两年提出的ULMFiT，GPT，BERT等都属于模型迁移。BERT 模型是将预训练模型和下游任务模型结合在一起的，核心目的就是：是把下游具体NLP任务的活逐渐移到预训练产生词向量上。</p>
-<span id="more"></span>
-
 <h2 id="主要亮点"><a href="#主要亮点" class="headerlink" title="主要亮点"></a>主要亮点</h2><ol>
 <li><p>双向Transformers</p>
 <p><img src="/images/%E8%AF%84%E8%AE%BA%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/%E6%88%AA%E5%B1%8F2021-10-24%20%E4%B8%8B%E5%8D%882.48.45.png" alt="截屏2021-10-24 下午2.48.45"></p>
 </li>
 <li><p>句子级别的应用</p>
 <p>通过使用segment同时考虑了句子级别的预测</p>
-</li>
+<span id="more"></span></li>
 <li><p>根据不同的任务，按照BERT的输入要求输入我们的数据，获取输出，在输出层加一层全连接层。a，b都是sentence级别的：文本分类，关系抽取，c，d是tokens级别的：命名实体识别，知识问答等</p>
 <center>
 
@@ -930,6 +926,31 @@
 </li>
 </ol>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在进行任务时，复制BERT的run_classifier.py，修改核心内容作为自己的run函数，包括继承DataProcessor，定义一个自己的数据预处理类，在create_model中，定义自己的具体下游工作</p>
+]]></content>
+      <tags>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Dropout和学习率</title>
+    <url>/2021/11/21/Dropout/</url>
+    <content><![CDATA[<h2 id="Dropout和学习率"><a href="#Dropout和学习率" class="headerlink" title="Dropout和学习率"></a>Dropout和学习率</h2><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><ol>
+<li>若模型参数太多，而训练样本太少的时候，容易出现过拟合的现象。</li>
+<li>过拟合的表现：模型在训练数据上损失函数较小，预测准确率较高，但是在测试数据上损失函数比较大，预测准确率低</li>
+<li>解决方法之一：模型集成，训练多个模型进行组合，但是费时</li>
+<li>Dropout有效缓解过拟合，一定程度上达到正则化的效果，在训练过程中，随机的忽略部分神经元，在正向传播过程中，这些被忽略的神经元对下游神经元的贡献效果暂时消失。在反向传播时，这些神经元也不会有任何权值的更新。</li>
+<li>在每个训练批次中，通过忽略一半的特征检测器（让一半的隐层节点值为0），可以明显的减少过拟合现象。减少特征检测器间的相互作用（指某些检测器依赖其他检测器才能发挥作用）</li>
+<li>等于0.5的时候效果最好，随机生成的网络结构最多</li>
+</ol>
+<span id="more"></span>
+
+<h3 id="学习率"><a href="#学习率" class="headerlink" title="学习率"></a>学习率</h3><ol>
+<li>学习率决定了参数移动到最优值的速度，学习率过大，会越过最优值，学习率过小，优化的效率可能过低，长时间算法无法收敛</li>
+<li>学习率应该随着训练的进行逐渐衰减，刚开始使用较大的学习率，使结果快速收敛，训练进行中逐步降低学习率和收敛的速度</li>
+<li>线性衰减、指数衰减</li>
+<li><code>Learning Rate = Learning Rate * 1/(1 + decay * epoch)</code></li>
+<li><code>Learning Rate = Initial Learning Rate * Drop Rate^(floor[(1 + Epoch)/Epoch Drop])</code>，decay为衰减率，epoch为迭代数。</li>
+</ol>
 ]]></content>
       <tags>
         <tag>深度学习</tag>
